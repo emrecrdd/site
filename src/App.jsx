@@ -96,36 +96,10 @@ function ScrollManager() {
    ROUTES
 ======================================== */
 
-const seo = {
-  "/": ["TAMİS Teknoloji | İleri Teknoloji ve Mühendislik", "Savunma, elektronik, otonom sistemler, yazılım ve Ar-Ge odaklı TAMİS Teknoloji."],
-  "/kurumsal": ["Kurumsal | TAMİS Teknoloji", "TAMİS Teknoloji kurumsal yaklaşımı, vizyonu ve mühendislik ilkeleri."],
-  "/yetkinlikler": ["Yetkinlikler | TAMİS Teknoloji", "Savunma sistemleri, elektronik, otonom sistemler, yazılım ve yapay zekâ yetkinlikleri."],
-  "/urunler": ["Ürünler | TAMİS Teknoloji", "TAMİS Teknoloji ürün ve sistem portföyü."],
-  "/ar-ge": ["Teknoloji & Ar-Ge | TAMİS Teknoloji", "Araştırma, sistem mühendisliği, prototipleme, doğrulama ve entegrasyon yaklaşımı."],
-  "/teknolojiler": ["Teknoloji Alanları | TAMİS Teknoloji", "TAMİS'in elektronik, algılama, otonomi ve yazılım teknoloji alanları."],
-  "/medya": ["Medya | TAMİS Teknoloji", "TAMİS Teknoloji haber, basın ve kurumsal doküman merkezi."],
-  "/kariyer": ["Kariyer | TAMİS Teknoloji", "TAMİS Teknoloji kariyer, mühendislik disiplinleri ve açık pozisyonlar."],
-  "/iletisim": ["İletişim | TAMİS Teknoloji", "TAMİS Teknoloji kurumsal iletişim bilgileri."],
-};
-
-function SeoManager(){
- const { pathname } = useLocation();
- useEffect(()=>{
-   const key = pathname.startsWith("/urunler/") ? "/urunler" : pathname;
-   const [title, description] = seo[key] || ["TAMİS Teknoloji", "TAMİS Teknoloji — ileri teknoloji ve mühendislik."];
-   document.title = title;
-   let meta = document.querySelector('meta[name="description"]');
-   if(!meta){ meta=document.createElement("meta"); meta.name="description"; document.head.appendChild(meta); }
-   meta.content=description;
- },[pathname]);
- return null;
-}
-
 function AppRoutes() {
   return (
     <>
       <ScrollManager />
-      <SeoManager />
 
       <Header />
 
