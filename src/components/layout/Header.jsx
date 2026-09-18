@@ -299,15 +299,15 @@ export default function Header() {
             }}
             className="fixed inset-0 z-[90] overflow-y-auto overscroll-contain bg-green pt-[84px] text-white xl:hidden"
           >
-            <Container className="flex min-h-[calc(100dvh-84px)] flex-col py-6 sm:py-8">
+            <Container className="flex min-h-[calc(100dvh-84px)] flex-col py-5 sm:py-6">
               {/* MOBILE TOP */}
 
-              <div className="mb-4 flex items-center justify-between border-b border-white/15 pb-4">
-                <span className="text-[9px] font-bold uppercase tracking-[.2em] text-white/45">
+              <div className="mb-2 flex items-center justify-between border-b border-white/15 pb-4">
+                <span className="text-[8px] font-bold uppercase tracking-[.22em] text-white/40">
                   TAMİS / Navigation
                 </span>
 
-                <span className="text-[9px] font-bold uppercase tracking-[.2em] text-white/45">
+                <span className="text-[8px] font-bold uppercase tracking-[.22em] text-white/40">
                   Ankara · Türkiye
                 </span>
               </div>
@@ -326,16 +326,19 @@ export default function Header() {
                       <div className="flex items-stretch">
                         <Link
                           to={item.to}
-                          className="flex min-w-0 flex-1 items-center py-5"
+                          className="group flex min-w-0 flex-1 items-center py-[18px]"
                         >
-                          <span className="mr-4 shrink-0 text-[9px] font-bold tracking-[.15em] text-white/40">
-                            {String(index + 1).padStart(
-                              2,
-                              "0"
-                            )}
+                          <span className="mr-4 w-5 shrink-0 text-[8px] font-bold tracking-[.18em] text-white/35">
+                            {String(index + 1).padStart(2, "0")}
                           </span>
 
-                          <span className="text-[clamp(1.35rem,6vw,1.8rem)] font-medium tracking-[-.04em] text-white">
+                          <span
+                            className={`min-w-0 text-[clamp(1.18rem,5.1vw,1.5rem)] font-medium leading-[1.05] tracking-[-.035em] transition-colors ${
+                              active(item)
+                                ? "text-white"
+                                : "text-white/90"
+                            }`}
+                          >
                             {item.label}
                           </span>
                         </Link>
@@ -346,16 +349,15 @@ export default function Header() {
                             onClick={() =>
                               toggleMobileSection(index)
                             }
-                            className="grid w-14 shrink-0 place-items-center border-l border-white/10 text-white/60"
+                            className="grid w-12 shrink-0 place-items-center border-l border-white/10 text-white/45 transition-colors hover:text-white"
                             aria-label={`${item.label} alt menüsü`}
                             aria-expanded={expanded}
                           >
                             <ChevronDown
-                              size={17}
+                              size={15}
+                              strokeWidth={1.6}
                               className={`transition-transform duration-300 ${
-                                expanded
-                                  ? "rotate-180"
-                                  : ""
+                                expanded ? "rotate-180" : ""
                               }`}
                             />
                           </button>
@@ -386,28 +388,28 @@ export default function Header() {
                               }}
                               className="overflow-hidden"
                             >
-                              <div className="border-t border-white/10 pb-4 pl-8">
+                              <div className="border-t border-white/10 pb-3 pl-9">
                                 {item.children.map(
-                                  (
-                                    [label, target],
-                                    childIndex
-                                  ) => (
+                                  ([label, target], childIndex) => (
                                     <Link
                                       key={`${label}-${target}`}
                                       to={target}
-                                      className="flex items-center justify-between border-b border-white/10 py-3.5 text-[12px] text-white/65"
+                                      className="group flex items-center justify-between border-b border-white/[0.08] py-3 text-[11px] tracking-[-.01em] text-white/55 transition-colors hover:text-white"
                                     >
                                       <span>
-                                        {String(
-                                          childIndex + 1
-                                        ).padStart(2, "0")}
-                                        {" / "}
+                                        <span className="mr-3 text-[8px] font-bold tracking-[.16em] text-white/25">
+                                          {String(
+                                            childIndex + 1
+                                          ).padStart(2, "0")}
+                                        </span>
+
                                         {label}
                                       </span>
 
                                       <ArrowUpRight
-                                        size={13}
-                                        className="mr-2 opacity-50"
+                                        size={12}
+                                        strokeWidth={1.6}
+                                        className="mr-3 opacity-35 transition-opacity group-hover:opacity-100"
                                       />
                                     </Link>
                                   )
@@ -423,17 +425,29 @@ export default function Header() {
 
               {/* CONTACT */}
 
-              <div className="mt-auto pt-10">
+              <div className="mt-auto pt-6">
                 <Link
                   to="/iletisim"
-                  className="group flex items-center justify-between border border-white/25 p-5 text-[11px] font-bold uppercase tracking-[.14em]"
+                  className="group flex items-center justify-between border border-white/20 px-5 py-4 transition-colors hover:bg-white hover:text-green"
                 >
-                  İletişim
+                  <div className="flex items-center gap-4">
+                    <span className="text-[8px] font-bold tracking-[.18em] text-white/30 transition-colors group-hover:text-green/45">
+                      07
+                    </span>
 
-                  <ArrowUpRight size={16} />
+                    <span className="text-[10px] font-bold uppercase tracking-[.18em]">
+                      İletişim
+                    </span>
+                  </div>
+
+                  <ArrowUpRight
+                    size={14}
+                    strokeWidth={1.6}
+                    className="opacity-70 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
                 </Link>
 
-                <div className="mt-5 flex items-center justify-between pb-4 text-[8px] font-bold uppercase tracking-[.18em] text-white/35">
+                <div className="mt-4 flex items-center justify-between pb-2 text-[7px] font-bold uppercase tracking-[.2em] text-white/25">
                   <span>TAMİS Teknoloji</span>
                   <span>TR / 2026</span>
                 </div>
