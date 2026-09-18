@@ -8,7 +8,7 @@ import {
 
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-
+import Careers from "./pages/Careers";
 import Home from "./pages/Home";
 import Corporate from "./pages/Corporate";
 import Capabilities from "./pages/Capabilities";
@@ -93,7 +93,7 @@ function AppRoutes() {
    
    
    
-    ["kariyer", "Kariyer"],
+   
     ["iletisim", "İletişim"],
   ];
 
@@ -137,6 +137,7 @@ function AppRoutes() {
   element={<Technologies />}
 />
 <Route path="/medya" element={<Media />} />
+<Route path="/kariyer" element={<Careers />} />
         {/* TEMPORARY PAGES */}
         {pages.map(([path, title]) => (
           <Route
