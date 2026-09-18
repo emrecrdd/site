@@ -14,6 +14,7 @@ import Corporate from "./pages/Corporate";
 import Capabilities from "./pages/Capabilities";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
+import Research from "./pages/Research";
 import Generic from "./pages/Generic";
 
 /* ========================================
@@ -89,7 +90,7 @@ function AppRoutes() {
    
     ["teknolojiler", "Teknolojiler"],
    
-    ["ar-ge", "Ar-Ge"],
+   
     ["medya", "Medya"],
     ["kariyer", "Kariyer"],
     ["iletisim", "İletişim"],
@@ -125,6 +126,10 @@ function AppRoutes() {
 <Route
   path="/urunler/:slug"
   element={<ProductDetail />}
+/>
+<Route
+  path="/ar-ge"
+  element={<Research />}
 />
         {/* TEMPORARY PAGES */}
         {pages.map(([path, title]) => (
