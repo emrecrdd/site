@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tamis.com.tr/sitemap.xml
