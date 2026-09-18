@@ -195,33 +195,9 @@ export default function Contact() {
               referrerPolicy="strict-origin-when-cross-origin"
             />
 
-            {/* TECHNICAL LABEL */}
+       
 
-            <div className="pointer-events-none absolute bottom-0 left-0 hidden bg-green px-6 py-5 text-white md:block">
-              <div className="flex items-center gap-8">
-                <div>
-                  <span className="block text-[8px] font-bold uppercase tracking-[0.18em] text-white/45">
-                    Konum
-                  </span>
-
-                  <span className="mt-2 block text-[10px] font-bold uppercase tracking-[0.15em]">
-                    Kahramankazan / Ankara
-                  </span>
-                </div>
-
-                <div className="h-8 w-px bg-white/20" />
-
-                <div>
-                  <span className="block text-[8px] font-bold uppercase tracking-[0.18em] text-white/45">
-                    Ülke
-                  </span>
-
-                  <span className="mt-2 block text-[10px] font-bold uppercase tracking-[0.15em]">
-                    Türkiye
-                  </span>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </motion.div>
       </section>
