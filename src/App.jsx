@@ -12,6 +12,8 @@ import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import Corporate from "./pages/Corporate";
 import Capabilities from "./pages/Capabilities";
+import Products from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail";
 import Generic from "./pages/Generic";
 
 /* ========================================
@@ -86,7 +88,7 @@ function AppRoutes() {
   const pages = [
    
     ["teknolojiler", "Teknolojiler"],
-    ["urunler", "Ürünler"],
+   
     ["ar-ge", "Ar-Ge"],
     ["medya", "Medya"],
     ["kariyer", "Kariyer"],
@@ -114,6 +116,15 @@ function AppRoutes() {
 <Route
   path="/yetkinlikler"
   element={<Capabilities />}
+/>
+<Route
+  path="/urunler"
+  element={<Products />}
+/>
+
+<Route
+  path="/urunler/:slug"
+  element={<ProductDetail />}
 />
         {/* TEMPORARY PAGES */}
         {pages.map(([path, title]) => (
