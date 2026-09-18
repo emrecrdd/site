@@ -11,6 +11,7 @@ import Footer from "./components/layout/Footer";
 
 import Home from "./pages/Home";
 import Corporate from "./pages/Corporate";
+import Capabilities from "./pages/Capabilities";
 import Generic from "./pages/Generic";
 
 /* ========================================
@@ -83,7 +84,7 @@ function AppRoutes() {
    * kullandığı için listede yok.
    */
   const pages = [
-    ["yetkinlikler", "Yetkinlikler"],
+   
     ["teknolojiler", "Teknolojiler"],
     ["urunler", "Ürünler"],
     ["ar-ge", "Ar-Ge"],
@@ -110,7 +111,10 @@ function AppRoutes() {
           path="/kurumsal"
           element={<Corporate />}
         />
-
+<Route
+  path="/yetkinlikler"
+  element={<Capabilities />}
+/>
         {/* TEMPORARY PAGES */}
         {pages.map(([path, title]) => (
           <Route
