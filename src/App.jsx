@@ -8,16 +8,19 @@ import {
 
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-import Careers from "./pages/Careers";
+
 import Home from "./pages/Home";
 import Corporate from "./pages/Corporate";
 import Capabilities from "./pages/Capabilities";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Research from "./pages/Research";
-import Generic from "./pages/Generic";
 import Technologies from "./pages/Technologies";
 import Media from "./pages/Media";
+import Careers from "./pages/Careers";
+import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
+
 /* ========================================
    SCROLL MANAGER
 ======================================== */
@@ -27,11 +30,14 @@ function ScrollManager() {
 
   useEffect(() => {
     /*
-     * URL'de #vizyon, #kalite vb. varsa
-     * ilgili bölüme git.
+     * URL'de #vizyon, #kalite, #muhendislik,
+     * #basin, #dokumanlar, #pozisyonlar vb.
+     * varsa ilgili bölüme git.
      */
     if (hash) {
-      const id = decodeURIComponent(hash.replace("#", ""));
+      const id = decodeURIComponent(
+        hash.replace("#", "")
+      );
 
       const scrollToElement = () => {
         const element = document.getElementById(id);
@@ -49,16 +55,27 @@ function ScrollManager() {
       };
 
       /*
-       * Route render edildikten sonra elementi bulabilmek için
-       * bir frame bekliyoruz.
+       * Yeni route render edildikten sonra
+       * hash elementinin DOM'a gelmesini bekliyoruz.
        */
+      let timeout;
+
       const frame = requestAnimationFrame(() => {
         if (!scrollToElement()) {
-          setTimeout(scrollToElement, 100);
+          timeout = setTimeout(
+            scrollToElement,
+            100
+          );
         }
       });
 
-      return () => cancelAnimationFrame(frame);
+      return () => {
+        cancelAnimationFrame(frame);
+
+        if (timeout) {
+          clearTimeout(timeout);
+        }
+      };
     }
 
     /*
@@ -80,23 +97,6 @@ function ScrollManager() {
 ======================================== */
 
 function AppRoutes() {
-  /*
-   * Gerçek sayfaları hazırladıkça
-   * buradan çıkaracağız.
-   *
-   * Kurumsal artık gerçek Corporate.jsx
-   * kullandığı için listede yok.
-   */
-  const pages = [
-   
-   
-   
-   
-   
-   
-    ["iletisim", "İletişim"],
-  ];
-
   return (
     <>
       <ScrollManager />
@@ -115,37 +115,58 @@ function AppRoutes() {
           path="/kurumsal"
           element={<Corporate />}
         />
-<Route
-  path="/yetkinlikler"
-  element={<Capabilities />}
-/>
-<Route
-  path="/urunler"
-  element={<Products />}
-/>
 
-<Route
-  path="/urunler/:slug"
-  element={<ProductDetail />}
-/>
-<Route
-  path="/ar-ge"
-  element={<Research />}
-/>
-<Route
-  path="/teknolojiler"
-  element={<Technologies />}
-/>
-<Route path="/medya" element={<Media />} />
-<Route path="/kariyer" element={<Careers />} />
-        {/* TEMPORARY PAGES */}
-        {pages.map(([path, title]) => (
-          <Route
-            key={path}
-            path={`/${path}`}
-            element={<Generic title={title} />}
-          />
-        ))}
+        {/* CAPABILITIES */}
+        <Route
+          path="/yetkinlikler"
+          element={<Capabilities />}
+        />
+
+        {/* PRODUCTS */}
+        <Route
+          path="/urunler"
+          element={<Products />}
+        />
+
+        <Route
+          path="/urunler/:slug"
+          element={<ProductDetail />}
+        />
+
+        {/* TECHNOLOGY & R&D */}
+        <Route
+          path="/ar-ge"
+          element={<Research />}
+        />
+
+        <Route
+          path="/teknolojiler"
+          element={<Technologies />}
+        />
+
+        {/* MEDIA */}
+        <Route
+          path="/medya"
+          element={<Media />}
+        />
+
+        {/* CAREERS */}
+        <Route
+          path="/kariyer"
+          element={<Careers />}
+        />
+
+        {/* CONTACT */}
+        <Route
+          path="/iletisim"
+          element={<Contact />}
+        />
+
+        {/* 404 */}
+        <Route
+          path="*"
+          element={<NotFound />}
+        />
       </Routes>
 
       <Footer />
