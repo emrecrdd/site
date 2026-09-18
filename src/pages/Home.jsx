@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import {
   ArrowDown,
-  ArrowRight,
   ArrowUpRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -117,7 +116,7 @@ const imageReveal = {
 };
 
 /* =========================================================
-   COMPONENT
+   HOME
 ========================================================= */
 
 export default function Home() {
@@ -129,7 +128,7 @@ export default function Home() {
 
       <section className="relative border-b border-ink/12 pt-[82px]">
         <Container className="grid lg:min-h-[calc(100svh-82px)] lg:grid-cols-12 lg:gap-10 xl:gap-14">
-          {/* HERO CONTENT */}
+          {/* CONTENT */}
 
           <motion.div
             {...reveal}
@@ -161,7 +160,10 @@ export default function Home() {
               <h1 className="max-w-[720px] text-[clamp(4rem,16vw,6.4rem)] font-medium leading-[.82] tracking-[-.075em] lg:text-[clamp(5rem,7.2vw,8.3rem)]">
                 Fikirden
                 <br />
-                <span className="text-green">sisteme.</span>
+
+                <span className="text-green">
+                  sisteme.
+                </span>
               </h1>
 
               <div className="mt-9 border-t border-ink/15 pt-7 md:mt-11">
@@ -191,24 +193,30 @@ export default function Home() {
 
             <div className="hidden items-center justify-between border-t border-ink/12 pt-5 lg:flex">
               <div className="flex items-center gap-3 text-[9px] font-bold uppercase tracking-[.18em] text-ink/35">
-                <ArrowDown size={13} strokeWidth={1.6} />
+                <ArrowDown
+                  size={13}
+                  strokeWidth={1.6}
+                />
+
                 Keşfetmek için kaydır
               </div>
 
               <span className="text-[8px] font-bold uppercase tracking-[.18em] text-ink/25">
-                01 — 07
+                01 — 06
               </span>
             </div>
           </motion.div>
 
-          {/* HERO MEDIA */}
+          {/* MEDIA */}
 
           <motion.div
             {...imageReveal}
             className="relative -mx-5 min-w-0 md:-mx-10 lg:col-span-7 lg:mx-0 lg:border-l lg:border-ink/12 lg:pl-10 xl:pl-14"
           >
             <div className="media-placeholder hero-media h-full">
-              <span>HERO PHOTO / FILM</span>
+              <span>
+                HERO PHOTO / FILM
+              </span>
 
               <small>
                 Desktop 16:9 · Mobile 4:5
@@ -245,7 +253,10 @@ export default function Home() {
             <div className="lg:col-span-3">
               <div className="flex items-center gap-3">
                 <span className="h-px w-8 bg-green" />
-                <p className="eyebrow">01 / TAMİS</p>
+
+                <p className="eyebrow">
+                  01 / TAMİS
+                </p>
               </div>
 
               <p className="mt-6 max-w-[220px] text-xs leading-6 text-ink/42">
@@ -259,6 +270,7 @@ export default function Home() {
               <h2 className="max-w-[1100px] text-[clamp(3rem,8vw,6.8rem)] font-medium leading-[.94] tracking-[-.065em]">
                 Teknolojiyi yalnızca
                 <br className="hidden md:block" /> kullanmıyoruz.{" "}
+
                 <span className="text-green">
                   Geliştiriyoruz.
                 </span>
@@ -297,7 +309,7 @@ export default function Home() {
 
       <section className="border-y border-ink/12 bg-paper py-20 md:py-28 lg:py-36">
         <Container>
-          {/* HEADING */}
+          {/* HEADER */}
 
           <motion.div
             {...reveal}
@@ -321,6 +333,7 @@ export default function Home() {
                 className="group hidden items-center gap-3 pb-2 text-[10px] font-bold uppercase tracking-[.16em] md:flex"
               >
                 Tüm yetkinlikler
+
                 <ArrowUpRight
                   size={13}
                   className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
@@ -332,7 +345,7 @@ export default function Home() {
           {/* CONTENT */}
 
           <div className="grid lg:grid-cols-12">
-            {/* CAPABILITY LIST */}
+            {/* LIST */}
 
             <div className="lg:col-span-7 lg:pr-12 xl:pr-16">
               {capabilities.map((item) => (
@@ -389,7 +402,9 @@ export default function Home() {
               className="mt-12 lg:col-span-5 lg:mt-0 lg:border-l lg:border-ink/12 lg:pl-12 xl:pl-16"
             >
               <div className="media-placeholder aspect-[4/5] min-h-0 lg:sticky lg:top-28 lg:min-h-[610px]">
-                <span>CAPABILITY PHOTO</span>
+                <span>
+                  CAPABILITY PHOTO
+                </span>
 
                 <small>
                   Mühendislik / sistem / teknoloji
@@ -413,7 +428,7 @@ export default function Home() {
       <section className="bg-[#e7ebe6] py-20 md:py-28 lg:py-36">
         <Container>
           <motion.div {...reveal}>
-            {/* TOP */}
+            {/* HEADER */}
 
             <div className="grid gap-8 border-b border-ink/15 pb-9 lg:grid-cols-12">
               <div className="lg:col-span-3">
@@ -426,6 +441,7 @@ export default function Home() {
                 <h2 className="max-w-4xl text-[clamp(3rem,7vw,6rem)] font-medium leading-[.92] tracking-[-.06em]">
                   Mühendislik
                   <br />
+
                   <span className="text-green">
                     ürüne dönüşür.
                   </span>
@@ -440,6 +456,8 @@ export default function Home() {
             {/* FEATURE */}
 
             <div className="grid gap-10 pt-10 lg:grid-cols-12 lg:gap-12">
+              {/* DESCRIPTION */}
+
               <div className="flex flex-col justify-between lg:col-span-4">
                 <div>
                   <span className="text-[9px] font-bold uppercase tracking-[.18em] text-green">
@@ -469,12 +487,16 @@ export default function Home() {
                 </Link>
               </div>
 
+              {/* MEDIA */}
+
               <motion.div
                 {...imageReveal}
                 className="lg:col-span-8"
               >
                 <div className="media-placeholder aspect-[4/5] min-h-0 md:aspect-[16/9] md:min-h-[500px]">
-                  <span>FEATURED SYSTEM</span>
+                  <span>
+                    FEATURED SYSTEM
+                  </span>
 
                   <small>
                     Ürün renderı / stüdyo çekimi
@@ -504,6 +526,8 @@ export default function Home() {
 
       <section className="bg-white py-20 md:py-28 lg:py-36">
         <Container>
+          {/* HEADER */}
+
           <motion.div
             {...reveal}
             className="grid gap-8 lg:grid-cols-12"
@@ -518,12 +542,15 @@ export default function Home() {
               <h2 className="max-w-4xl text-[clamp(2.8rem,6vw,5.5rem)] font-medium leading-[.94] tracking-[-.06em]">
                 Fikirden,
                 <br />
+
                 <span className="text-green">
                   doğrulanmış sisteme.
                 </span>
               </h2>
             </div>
           </motion.div>
+
+          {/* PROCESS */}
 
           <div className="mt-14 border-t border-ink/15 md:mt-20">
             {process.map((item) => (
@@ -558,7 +585,7 @@ export default function Home() {
       </section>
 
       {/* =====================================================
-          R&D
+          RESEARCH & DEVELOPMENT
       ===================================================== */}
 
       <section className="border-y border-ink/12 bg-paper py-20 md:py-28 lg:py-36">
@@ -571,7 +598,9 @@ export default function Home() {
               className="lg:col-span-6"
             >
               <div className="media-placeholder aspect-[4/5] min-h-0 md:aspect-[5/4] lg:min-h-[620px] lg:aspect-auto">
-                <span>R&amp;D / LAB PHOTO</span>
+                <span>
+                  R&amp;D / LAB PHOTO
+                </span>
 
                 <small>
                   Laboratuvar · mühendis · prototip
@@ -603,6 +632,7 @@ export default function Home() {
                   <br />
                   gereksinimleri
                   <br />
+
                   <span className="text-green">
                     için.
                   </span>
@@ -634,94 +664,18 @@ export default function Home() {
       </section>
 
       {/* =====================================================
-          CORPORATE
-      ===================================================== */}
-
-      <section className="bg-white py-20 md:py-28 lg:py-36">
-        <Container>
-          <motion.div
-            {...reveal}
-            className="grid gap-12 lg:grid-cols-12"
-          >
-            {/* LABEL */}
-
-            <div className="lg:col-span-3">
-              <p className="eyebrow">
-                06 / Kurumsal
-              </p>
-            </div>
-
-            {/* CONTENT */}
-
-            <div className="lg:col-span-9">
-              <div className="grid gap-10 md:grid-cols-[1.15fr_.85fr] md:items-end">
-                <h2 className="max-w-4xl text-[clamp(3rem,6vw,5.8rem)] font-medium leading-[.93] tracking-[-.06em]">
-                  Mühendislik
-                  <br />
-                  odağında büyüyen
-                  <br />
-                  <span className="text-green">
-                    teknoloji şirketi.
-                  </span>
-                </h2>
-
-                <div className="md:pb-2">
-                  <p className="max-w-sm text-sm leading-7 text-ink/50">
-                    Kurumsal fotoğraf, tesis ve ekip içerikleri hazır olduğunda
-                    bu bölüm TAMİS'in yapısını ve çalışma yaklaşımını
-                    destekleyecek.
-                  </p>
-
-                  <Link
-                    to="/kurumsal"
-                    className="group mt-7 inline-flex items-center gap-3 border-b border-ink/30 pb-2 text-[10px] font-bold uppercase tracking-[.16em] transition-colors hover:border-green hover:text-green"
-                  >
-                    TAMİS'i tanıyın
-
-                    <ArrowUpRight
-                      size={13}
-                      className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                    />
-                  </Link>
-                </div>
-              </div>
-
-              <motion.div
-                {...imageReveal}
-                className="mt-12"
-              >
-                <div className="media-placeholder aspect-[4/5] min-h-0 md:aspect-[16/7] md:min-h-[470px]">
-                  <span>FACILITY / TEAM PHOTO</span>
-
-                  <small>
-                    Tesis / ekip / çalışma ortamı
-                    <br />
-                    Wide editorial image
-                  </small>
-
-                  <div className="media-code">
-                    MEDIA 04
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-        </Container>
-      </section>
-
-      {/* =====================================================
-          CONTACT / PRE-FOOTER
+          CORPORATE / CLOSING
       ===================================================== */}
 
       <section className="relative overflow-hidden border-t border-ink/12 bg-[#e5e8e3]">
-        {/* DECORATIVE TECH GRID */}
+        {/* TECHNICAL BACKGROUND */}
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 opacity-[0.28]"
+          className="pointer-events-none absolute inset-0 opacity-[0.22]"
           style={{
             backgroundImage:
-              "linear-gradient(to right, rgba(24,62,50,.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(24,62,50,.07) 1px, transparent 1px)",
+              "linear-gradient(to right, rgba(24,62,50,.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(24,62,50,.06) 1px, transparent 1px)",
             backgroundSize: "72px 72px",
           }}
         />
@@ -729,77 +683,115 @@ export default function Home() {
         <Container className="relative">
           <motion.div
             {...reveal}
-            className="grid min-h-[500px] py-16 md:min-h-[600px] md:py-20 lg:grid-cols-12 lg:items-stretch lg:py-0"
+            className="grid py-20 md:py-28 lg:grid-cols-12 lg:py-36"
           >
             {/* LEFT */}
 
-            <div className="flex flex-col justify-between lg:col-span-3 lg:border-r lg:border-ink/15 lg:py-20 lg:pr-10">
-              <div className="flex items-center gap-3">
-                <span className="h-px w-8 bg-green" />
+            <div className="flex flex-col justify-between lg:col-span-3 lg:border-r lg:border-ink/15 lg:pr-10">
+              <div>
+                <div className="flex items-center gap-3">
+                  <span className="h-px w-8 bg-green" />
 
-                <span className="eyebrow text-green">
-                  07 / İletişim
-                </span>
+                  <p className="eyebrow">
+                    06 / Kurumsal
+                  </p>
+                </div>
+
+                <p className="mt-5 max-w-[190px] text-xs leading-6 text-ink/40">
+                  TAMİS Teknoloji
+                </p>
               </div>
 
-              <div className="mt-16 hidden lg:block">
-                <span className="text-[8px] font-bold uppercase tracking-[.2em] text-ink/30">
-                  TAMİS Teknoloji
+              <div className="mt-12 hidden lg:block">
+                <span className="text-[8px] font-bold uppercase tracking-[.2em] text-ink/25">
+                  Corporate / Engineering
                 </span>
 
-                <div className="mt-4 h-16 w-px bg-green/35" />
+                <div className="mt-5 h-16 w-px bg-green/30" />
               </div>
             </div>
 
-            {/* MAIN CTA */}
+            {/* MAIN */}
 
-            <div className="flex flex-col justify-between pt-16 lg:col-span-9 lg:py-20 lg:pl-14 xl:pl-20">
-              <div>
-                <span className="text-[9px] font-bold uppercase tracking-[.2em] text-ink/35">
-                  Bir sonraki adım
-                </span>
+            <div className="mt-14 min-w-0 lg:col-span-9 lg:mt-0 lg:pl-14 xl:pl-20">
+              {/* HEADING */}
 
-                <h2 className="mt-7 max-w-[1050px] text-[clamp(3.4rem,8vw,7.5rem)] font-medium leading-[.86] tracking-[-.07em] text-ink">
-                  Geleceğin
+              <div className="grid gap-10 md:grid-cols-[1.3fr_.7fr] md:items-end">
+                <h2 className="max-w-[850px] text-[clamp(3.2rem,6.5vw,6.4rem)] font-medium leading-[.9] tracking-[-.065em] text-ink">
+                  Mühendislik
                   <br />
-                  teknolojisini
+                  odağında büyüyen
                   <br />
 
                   <span className="text-green">
-                    birlikte geliştirelim.
+                    teknoloji şirketi.
                   </span>
                 </h2>
-              </div>
 
-              <div className="mt-14 flex flex-col gap-8 border-t border-ink/15 pt-8 md:flex-row md:items-end md:justify-between lg:mt-20">
-                <p className="max-w-md text-sm leading-7 text-ink/50">
-                  Kurumsal iletişim ve genel bilgi talepleri için TAMİS
-                  Teknoloji ile iletişime geçebilirsiniz.
-                </p>
+                <div className="md:pb-2">
+                  <p className="max-w-sm text-sm leading-7 text-ink/48">
+                    Kurumsal fotoğraf, tesis ve ekip içerikleri hazır olduğunda
+                    bu alan TAMİS'in yapısını ve çalışma yaklaşımını
+                    destekleyecek.
+                  </p>
 
-                <Link
-                  to="/iletisim"
-                  className="group flex w-full items-center justify-between border-y border-ink/20 py-5 md:w-auto md:min-w-[260px]"
-                >
-                  <div>
-                    <span className="block text-[9px] font-bold uppercase tracking-[.18em] text-green">
-                      İletişim
-                    </span>
+                  <Link
+                    to="/kurumsal"
+                    className="group mt-7 inline-flex items-center gap-3 border-b border-ink/25 pb-2 text-[10px] font-bold uppercase tracking-[.16em] text-ink transition-colors duration-300 hover:border-green hover:text-green"
+                  >
+                    TAMİS'i tanıyın
 
-                    <span className="mt-1 block text-lg font-medium tracking-[-.035em] text-ink">
-                      Bizimle iletişime geçin
-                    </span>
-                  </div>
-
-                  <div className="ml-8 grid size-11 shrink-0 place-items-center border border-ink/20 transition-all duration-300 group-hover:border-green group-hover:bg-green group-hover:text-white">
-                    <ArrowRight
-                      size={16}
-                      strokeWidth={1.6}
-                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    <ArrowUpRight
+                      size={13}
+                      strokeWidth={1.7}
+                      className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                     />
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               </div>
+
+              {/* MEDIA */}
+
+              <motion.div
+                {...imageReveal}
+                className="relative mt-12 md:mt-16"
+              >
+                <div className="media-placeholder aspect-[4/5] min-h-0 md:aspect-[16/7] md:min-h-[480px]">
+                  <span>
+                    FACILITY / TEAM PHOTO
+                  </span>
+
+                  <small>
+                    Tesis / ekip / çalışma ortamı
+                    <br />
+                    Wide editorial image
+                  </small>
+
+                  <div className="absolute left-5 top-5 z-[2] flex items-center gap-3">
+                    <span className="h-px w-6 bg-green/50" />
+
+                    <span className="text-[8px] font-bold uppercase tracking-[.18em] text-green/60">
+                      TAMİS / CORPORATE
+                    </span>
+                  </div>
+
+                  <div className="media-code">
+                    MEDIA 04
+                  </div>
+                </div>
+
+                {/* MEDIA META */}
+
+                <div className="flex items-center justify-between border-b border-x border-ink/12 px-4 py-3 md:px-5">
+                  <span className="text-[8px] font-bold uppercase tracking-[.17em] text-ink/30">
+                    Corporate Media
+                  </span>
+
+                  <span className="text-[8px] font-bold uppercase tracking-[.17em] text-ink/25">
+                    06 / TAMİS
+                  </span>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </Container>
