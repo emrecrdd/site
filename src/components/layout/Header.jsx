@@ -37,7 +37,7 @@ export default function Header() {
   }, []);
 
   /* ========================================
-      ROUTE / HASH DEĞİŞİNCE MENÜLERİ KAPAT
+      ROUTE / HASH CHANGE
   ======================================== */
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export default function Header() {
   }, [location.pathname, location.hash]);
 
   /* ========================================
-      MOBILE BODY SCROLL LOCK
+      MOBILE SCROLL LOCK
   ======================================== */
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export default function Header() {
   }, [open]);
 
   /* ========================================
-      ESC İLE MENÜYÜ KAPAT
+      ESC CLOSE
   ======================================== */
 
   useEffect(() => {
@@ -81,7 +81,7 @@ export default function Header() {
   }, []);
 
   /* ========================================
-      NAVIGATION HELPERS
+      HELPERS
   ======================================== */
 
   const closeNavigation = () => {
@@ -92,17 +92,6 @@ export default function Header() {
   const isNavItemActive = (item) => {
     const pathname = location.pathname;
 
-    /*
-      Teknoloji & Ar-Ge tek ana navigasyon çatısıdır.
-
-      /ar-ge
-      /ar-ge/*
-      /teknolojiler
-      /teknolojiler/*
-
-      adreslerinde Teknoloji & Ar-Ge aktif kalır.
-    */
-
     if (item.to === "/ar-ge") {
       return (
         pathname === "/ar-ge" ||
@@ -111,11 +100,6 @@ export default function Header() {
         pathname.startsWith("/teknolojiler/")
       );
     }
-
-    /*
-      Ürün detaylarında da Ürünler
-      ana navigasyonu aktif kalır.
-    */
 
     if (item.to === "/urunler") {
       return (
@@ -127,6 +111,8 @@ export default function Header() {
     return pathname === item.to;
   };
 
+  const contactActive = location.pathname === "/iletisim";
+
   return (
     <>
       {/* ========================================
@@ -136,8 +122,8 @@ export default function Header() {
       <header
         className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
           scrolled
-            ? "border-ink/10 bg-paper/95 shadow-[0_8px_30px_rgba(23,33,29,.05)] backdrop-blur-xl"
-            : "border-ink/10 bg-paper/90 backdrop-blur-md"
+            ? "border-ink/10 bg-paper/95 shadow-[0_8px_30px_rgba(23,33,29,.045)] backdrop-blur-xl"
+            : "border-ink/10 bg-paper/92 backdrop-blur-md"
         }`}
         onMouseLeave={() => setMega(null)}
       >
@@ -172,70 +158,108 @@ export default function Header() {
           ======================================== */}
 
           <nav
-            className="hidden h-full items-center gap-1 xl:flex"
+            className="hidden h-full items-center xl:flex"
             aria-label="Ana navigasyon"
           >
-            {nav.map((item, index) => {
-              const hasChildren =
-                Array.isArray(item.children) &&
-                item.children.length > 0;
+            <div className="flex h-full items-center">
+              {nav.map((item, index) => {
+                const hasChildren =
+                  Array.isArray(item.children) &&
+                  item.children.length > 0;
 
-              const active = isNavItemActive(item);
+                const active = isNavItemActive(item);
 
-              return (
-                <div
-                  key={item.to}
-                  className="flex h-full items-center"
-                  onMouseEnter={() => {
-                    if (hasChildren) {
-                      setMega(index);
-                    } else {
-                      setMega(null);
-                    }
-                  }}
-                >
-                  <NavLink
-                    to={item.to}
-                    className={`relative flex h-full items-center gap-1.5 px-3 text-[10px] font-bold uppercase tracking-[.12em] transition-colors duration-300 ${
-                      active
-                        ? "text-green"
-                        : "text-ink/62 hover:text-green"
-                    }`}
+                return (
+                  <div
+                    key={item.to}
+                    className="flex h-full items-center"
+                    onMouseEnter={() => {
+                      if (hasChildren) {
+                        setMega(index);
+                      } else {
+                        setMega(null);
+                      }
+                    }}
                   >
-                    {item.label}
+                    <NavLink
+                      to={item.to}
+                      className={`group relative flex h-full items-center gap-1.5 px-3.5 text-[10px] font-bold uppercase tracking-[.115em] transition-colors duration-300 ${
+                        active
+                          ? "text-green"
+                          : "text-ink/60 hover:text-ink"
+                      }`}
+                    >
+                      <span>{item.label}</span>
 
-                    {hasChildren && (
-                      <ChevronDown
-                        size={12}
-                        className={`transition-transform duration-300 ${
-                          mega === index ? "rotate-180" : ""
-                        }`}
-                      />
-                    )}
+                      {hasChildren && (
+                        <ChevronDown
+                          size={11}
+                          strokeWidth={1.8}
+                          className={`transition-all duration-300 ${
+                            mega === index
+                              ? "rotate-180 text-green"
+                              : "text-ink/30 group-hover:text-green"
+                          }`}
+                        />
+                      )}
 
-                    {active && (
-                      <motion.span
-                        layoutId="desktop-navigation-active"
-                        className="absolute inset-x-3 bottom-0 h-[2px] bg-green"
-                        transition={{
-                          duration: 0.35,
-                          ease: [0.16, 1, 0.3, 1],
-                        }}
-                      />
-                    )}
-                  </NavLink>
-                </div>
-              );
-            })}
+                      {!active && (
+                        <span className="absolute inset-x-3.5 bottom-0 h-px origin-left scale-x-0 bg-green transition-transform duration-300 group-hover:scale-x-100" />
+                      )}
 
-            <Link
-              to="/iletisim"
-              onClick={closeNavigation}
-              className="ml-3 inline-flex items-center gap-2 bg-green px-5 py-3.5 text-[10px] font-bold uppercase tracking-[.16em] text-white transition-colors duration-300 hover:bg-ink"
-            >
-              İletişim
-              <ArrowUpRight size={14} />
-            </Link>
+                      {active && (
+                        <motion.span
+                          layoutId="desktop-navigation-active"
+                          className="absolute inset-x-3.5 bottom-0 h-[2px] bg-green"
+                          transition={{
+                            duration: 0.35,
+                            ease: [0.16, 1, 0.3, 1],
+                          }}
+                        />
+                      )}
+                    </NavLink>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* CONTACT */}
+
+            <div className="ml-4 flex h-full items-center">
+              <span
+                aria-hidden="true"
+                className="mr-5 h-5 w-px bg-ink/15"
+              />
+
+              <Link
+                to="/iletisim"
+                onClick={closeNavigation}
+                className={`group relative flex h-full items-center gap-2.5 pr-1 text-[10px] font-bold uppercase tracking-[.14em] transition-colors duration-300 ${
+                  contactActive
+                    ? "text-green"
+                    : "text-ink/70 hover:text-green"
+                }`}
+              >
+                <span>İletişim</span>
+
+                <ArrowUpRight
+                  size={13}
+                  strokeWidth={1.8}
+                  className="transition-transform duration-300 group-hover:-translate-y-[2px] group-hover:translate-x-[2px]"
+                />
+
+                {contactActive && (
+                  <motion.span
+                    layoutId="desktop-contact-active"
+                    className="absolute inset-x-0 bottom-0 h-[2px] bg-green"
+                    transition={{
+                      duration: 0.35,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                  />
+                )}
+              </Link>
+            </div>
           </nav>
 
           {/* ========================================
@@ -273,7 +297,7 @@ export default function Header() {
                     duration: 0.2,
                   }}
                 >
-                  <X size={27} />
+                  <X size={27} strokeWidth={1.7} />
                 </motion.span>
               ) : (
                 <motion.span
@@ -294,7 +318,7 @@ export default function Header() {
                     duration: 0.2,
                   }}
                 >
-                  <Menu size={28} />
+                  <Menu size={28} strokeWidth={1.7} />
                 </motion.span>
               )}
             </AnimatePresence>
@@ -325,36 +349,45 @@ export default function Header() {
                 duration: 0.25,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="hidden border-t border-ink/10 bg-paper shadow-[0_24px_50px_rgba(23,33,29,.06)] xl:block"
+              className="hidden border-t border-ink/10 bg-paper shadow-[0_24px_50px_rgba(23,33,29,.055)] xl:block"
             >
               <div className="mx-auto grid max-w-[1600px] grid-cols-[.7fr_1fr_.8fr] gap-16 px-16 py-10">
-                {/* Mega title */}
+                {/* LEFT */}
 
                 <div>
-                  <span className="eyebrow">
-                    0{mega + 1} / Navigasyon
-                  </span>
+                  <div className="flex items-center gap-3">
+                    <span className="h-px w-7 bg-green" />
 
-                  <h3 className="mt-4 text-4xl font-medium tracking-[-.05em]">
+                    <span className="eyebrow">
+                      0{mega + 1} / Navigasyon
+                    </span>
+                  </div>
+
+                  <h3 className="mt-5 text-4xl font-medium tracking-[-.05em]">
                     {nav[mega].label}
                   </h3>
 
                   <p className="mt-4 max-w-sm text-sm leading-7 text-ink/50">
-                    TAMİS'in teknoloji, mühendislik ve kurumsal yaklaşımını
-                    keşfedin.
+                    TAMİS'in teknoloji, mühendislik ve kurumsal
+                    yaklaşımını keşfedin.
                   </p>
 
                   <Link
                     to={nav[mega].to}
                     onClick={closeNavigation}
-                    className="mt-7 inline-flex items-center gap-3 border-b border-ink/30 pb-2 text-[10px] font-bold uppercase tracking-[.15em]"
+                    className="group mt-7 inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[.15em] text-ink/70 transition-colors hover:text-green"
                   >
                     Bölüme git
-                    <ArrowUpRight size={14} />
+
+                    <ArrowUpRight
+                      size={13}
+                      strokeWidth={1.8}
+                      className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    />
                   </Link>
                 </div>
 
-                {/* Mega links */}
+                {/* LINKS */}
 
                 <div className="grid content-start grid-cols-2 gap-x-10">
                   {nav[mega].children?.map(([label, to]) => (
@@ -362,19 +395,20 @@ export default function Header() {
                       key={to}
                       to={to}
                       onClick={closeNavigation}
-                      className="group flex items-center justify-between border-b border-ink/15 py-4 text-sm font-semibold transition-colors duration-300 hover:text-green"
+                      className="group flex min-h-[58px] items-center justify-between gap-5 border-b border-ink/15 text-sm font-semibold transition-colors duration-300 hover:text-green"
                     >
                       <span>{label}</span>
 
                       <ArrowUpRight
-                        size={15}
-                        className="opacity-30 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100"
+                        size={14}
+                        strokeWidth={1.8}
+                        className="shrink-0 text-ink/25 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-green"
                       />
                     </Link>
                   ))}
                 </div>
 
-                {/* Mega visual */}
+                {/* MEDIA */}
 
                 <div className="media-placeholder min-h-44">
                   <span>FEATURED MEDIA</span>
@@ -437,7 +471,7 @@ export default function Header() {
               className="px-5 pb-10 pt-[105px] md:px-10"
             >
               <div className="mx-auto max-w-[1500px]">
-                {/* Label */}
+                {/* LABEL */}
 
                 <div className="mb-6 flex items-center gap-3">
                   <span className="h-px w-8 bg-green" />
@@ -447,7 +481,7 @@ export default function Header() {
                   </span>
                 </div>
 
-                {/* Navigation items */}
+                {/* MAIN ITEMS */}
 
                 <div>
                   {nav.map((item, index) => {
@@ -506,13 +540,12 @@ export default function Header() {
                                   to={to}
                                   className="group flex items-center justify-between gap-5 text-sm text-ink/50 transition-colors hover:text-green"
                                 >
-                                  <span>
-                                    {label}
-                                  </span>
+                                  <span>{label}</span>
 
                                   <ArrowUpRight
                                     size={13}
-                                    className="shrink-0 opacity-50 transition-all group-hover:translate-x-0.5 group-hover:opacity-100"
+                                    strokeWidth={1.8}
+                                    className="shrink-0 opacity-40 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100"
                                   />
                                 </Link>
                               ))}
@@ -523,18 +556,37 @@ export default function Header() {
                   })}
                 </div>
 
-                {/* Mobile contact */}
+                {/* CONTACT */}
 
                 <Link
                   to="/iletisim"
                   onClick={closeNavigation}
-                  className="mt-8 flex w-full items-center justify-between bg-green px-5 py-5 text-[10px] font-bold uppercase tracking-[.16em] text-white"
+                  className={`group mt-8 flex items-center justify-between border-y py-5 transition-colors ${
+                    contactActive
+                      ? "border-green/35 text-green"
+                      : "border-ink/15 text-ink hover:text-green"
+                  }`}
                 >
-                  İletişime geç
-                  <ArrowUpRight size={16} />
+                  <div className="flex items-center gap-4">
+                    <span className="text-[9px] font-bold tracking-[.16em] text-green">
+                      07
+                    </span>
+
+                    <span className="text-lg font-semibold tracking-[-.035em]">
+                      İletişim
+                    </span>
+                  </div>
+
+                  <ArrowUpRight
+                    size={15}
+                    strokeWidth={1.8}
+                    className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  />
                 </Link>
 
-                <div className="mt-8 flex items-center justify-between border-t border-ink/10 pt-5">
+                {/* FOOT */}
+
+                <div className="mt-8 flex items-center justify-between pt-1">
                   <span className="text-[9px] font-bold uppercase tracking-[.18em] text-ink/35">
                     TAMİS Teknoloji
                   </span>
