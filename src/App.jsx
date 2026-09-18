@@ -16,7 +16,7 @@ import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Research from "./pages/Research";
 import Generic from "./pages/Generic";
-
+import Technologies from "./pages/Technologies";
 /* ========================================
    SCROLL MANAGER
 ======================================== */
@@ -88,7 +88,7 @@ function AppRoutes() {
    */
   const pages = [
    
-    ["teknolojiler", "Teknolojiler"],
+   
    
    
     ["medya", "Medya"],
@@ -130,6 +130,10 @@ function AppRoutes() {
 <Route
   path="/ar-ge"
   element={<Research />}
+/>
+<Route
+  path="/teknolojiler"
+  element={<Technologies />}
 />
         {/* TEMPORARY PAGES */}
         {pages.map(([path, title]) => (

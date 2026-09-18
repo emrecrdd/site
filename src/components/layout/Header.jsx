@@ -16,7 +16,10 @@ export default function Header() {
 
   const location = useLocation();
 
-  /* Scroll state */
+  /* ========================================
+      SCROLL STATE
+  ======================================== */
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 12);
@@ -33,13 +36,19 @@ export default function Header() {
     };
   }, []);
 
-  /* Route değişince menüleri kapat */
+  /* ========================================
+      ROUTE / HASH DEĞİŞİNCE MENÜLERİ KAPAT
+  ======================================== */
+
   useEffect(() => {
     setOpen(false);
     setMega(null);
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
-  /* Mobil menü açıkken body scroll kapat */
+  /* ========================================
+      MOBILE BODY SCROLL LOCK
+  ======================================== */
+
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -52,7 +61,10 @@ export default function Header() {
     };
   }, [open]);
 
-  /* ESC ile menüyü kapat */
+  /* ========================================
+      ESC İLE MENÜYÜ KAPAT
+  ======================================== */
+
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
@@ -68,9 +80,51 @@ export default function Header() {
     };
   }, []);
 
+  /* ========================================
+      NAVIGATION HELPERS
+  ======================================== */
+
   const closeNavigation = () => {
     setOpen(false);
     setMega(null);
+  };
+
+  const isNavItemActive = (item) => {
+    const pathname = location.pathname;
+
+    /*
+      Teknoloji & Ar-Ge tek ana navigasyon çatısıdır.
+
+      /ar-ge
+      /ar-ge/*
+      /teknolojiler
+      /teknolojiler/*
+
+      adreslerinde Teknoloji & Ar-Ge aktif kalır.
+    */
+
+    if (item.to === "/ar-ge") {
+      return (
+        pathname === "/ar-ge" ||
+        pathname.startsWith("/ar-ge/") ||
+        pathname === "/teknolojiler" ||
+        pathname.startsWith("/teknolojiler/")
+      );
+    }
+
+    /*
+      Ürün detaylarında da Ürünler
+      ana navigasyonu aktif kalır.
+    */
+
+    if (item.to === "/urunler") {
+      return (
+        pathname === "/urunler" ||
+        pathname.startsWith("/urunler/")
+      );
+    }
+
+    return pathname === item.to;
   };
 
   return (
@@ -126,6 +180,8 @@ export default function Header() {
                 Array.isArray(item.children) &&
                 item.children.length > 0;
 
+              const active = isNavItemActive(item);
+
               return (
                 <div
                   key={item.to}
@@ -140,13 +196,11 @@ export default function Header() {
                 >
                   <NavLink
                     to={item.to}
-                    className={({ isActive }) =>
-                      `relative flex h-full items-center gap-1.5 px-3 text-[10px] font-bold uppercase tracking-[.12em] transition-colors duration-300 ${
-                        isActive
-                          ? "text-green"
-                          : "text-ink/62 hover:text-green"
-                      }`
-                    }
+                    className={`relative flex h-full items-center gap-1.5 px-3 text-[10px] font-bold uppercase tracking-[.12em] transition-colors duration-300 ${
+                      active
+                        ? "text-green"
+                        : "text-ink/62 hover:text-green"
+                    }`}
                   >
                     {item.label}
 
@@ -156,6 +210,17 @@ export default function Header() {
                         className={`transition-transform duration-300 ${
                           mega === index ? "rotate-180" : ""
                         }`}
+                      />
+                    )}
+
+                    {active && (
+                      <motion.span
+                        layoutId="desktop-navigation-active"
+                        className="absolute inset-x-3 bottom-0 h-[2px] bg-green"
+                        transition={{
+                          duration: 0.35,
+                          ease: [0.16, 1, 0.3, 1],
+                        }}
                       />
                     )}
                   </NavLink>
@@ -385,63 +450,77 @@ export default function Header() {
                 {/* Navigation items */}
 
                 <div>
-                  {nav.map((item, index) => (
-                    <motion.div
-                      key={item.to}
-                      initial={{
-                        opacity: 0,
-                        y: 12,
-                      }}
-                      animate={{
-                        opacity: 1,
-                        y: 0,
-                      }}
-                      transition={{
-                        duration: 0.4,
-                        delay: 0.04 * index,
-                        ease: [0.16, 1, 0.3, 1],
-                      }}
-                      className="border-b border-ink/15 py-5"
-                    >
-                      <Link
-                        onClick={closeNavigation}
-                        to={item.to}
-                        className="group flex items-start justify-between gap-6"
+                  {nav.map((item, index) => {
+                    const active = isNavItemActive(item);
+
+                    return (
+                      <motion.div
+                        key={item.to}
+                        initial={{
+                          opacity: 0,
+                          y: 12,
+                        }}
+                        animate={{
+                          opacity: 1,
+                          y: 0,
+                        }}
+                        transition={{
+                          duration: 0.4,
+                          delay: 0.04 * index,
+                          ease: [0.16, 1, 0.3, 1],
+                        }}
+                        className={`border-b py-5 ${
+                          active
+                            ? "border-green/35"
+                            : "border-ink/15"
+                        }`}
                       >
-                        <span className="min-w-0 text-[clamp(1.65rem,7.5vw,2.4rem)] font-semibold leading-[.95] tracking-[-.045em] transition-colors group-hover:text-green">
-                          {item.label}
-                        </span>
+                        <Link
+                          onClick={closeNavigation}
+                          to={item.to}
+                          className="group flex items-start justify-between gap-6"
+                        >
+                          <span
+                            className={`min-w-0 text-[clamp(1.65rem,7.5vw,2.4rem)] font-semibold leading-[.95] tracking-[-.045em] transition-colors group-hover:text-green ${
+                              active
+                                ? "text-green"
+                                : "text-ink"
+                            }`}
+                          >
+                            {item.label}
+                          </span>
 
-                        <span className="shrink-0 pt-1 text-[9px] font-bold tracking-[.15em] text-green">
-                          0{index + 1}
-                        </span>
-                      </Link>
+                          <span className="shrink-0 pt-1 text-[9px] font-bold tracking-[.15em] text-green">
+                            0{index + 1}
+                          </span>
+                        </Link>
 
-                      {item.children?.length > 0 && (
-                        <div className="mt-5 grid gap-3">
-                          {item.children
-                            .slice(0, 4)
-                            .map(([label, to]) => (
-                              <Link
-                                onClick={closeNavigation}
-                                key={to}
-                                to={to}
-                                className="group flex items-center justify-between gap-5 text-sm text-ink/50 transition-colors hover:text-green"
-                              >
-                                <span>
-                                  {label}
-                                </span>
+                        {item.children?.length > 0 && (
+                          <div className="mt-5 grid gap-3">
+                            {item.children
+                              .slice(0, 4)
+                              .map(([label, to]) => (
+                                <Link
+                                  onClick={closeNavigation}
+                                  key={to}
+                                  to={to}
+                                  className="group flex items-center justify-between gap-5 text-sm text-ink/50 transition-colors hover:text-green"
+                                >
+                                  <span>
+                                    {label}
+                                  </span>
 
-                                <ArrowUpRight
-                                  size={13}
-                                  className="shrink-0 opacity-50 transition-all group-hover:translate-x-0.5 group-hover:opacity-100"
-                                />
-                              </Link>
-                            ))}
-                        </div>
-                      )}
-                    </motion.div>
-                  ))}
+                                  <ArrowUpRight
+                                    size={13}
+                                    className="shrink-0 opacity-50 transition-all group-hover:translate-x-0.5 group-hover:opacity-100"
+                                  />
+                                </Link>
+                              ))}
+                          </div>
+                        )}
+                      </motion.div>
+                    );
+                  })}
                 </div>
 
                 {/* Mobile contact */}
