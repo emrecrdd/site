@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import {
+  ArrowDownRight,
   ArrowUpRight,
   Mail,
   MapPin,
@@ -17,23 +18,6 @@ const reveal = {
   },
 };
 
-const contactItems = [
-  {
-    number: "01",
-    label: "Telefon",
-    value: "+90 312 394 01 35",
-    href: "tel:+903123940135",
-    icon: Phone,
-  },
-  {
-    number: "02",
-    label: "E-posta",
-    value: "info@tamis.com.tr",
-    href: "mailto:info@tamis.com.tr",
-    icon: Mail,
-  },
-];
-
 export default function Contact() {
   return (
     <main className="overflow-hidden">
@@ -41,36 +25,113 @@ export default function Contact() {
           HERO
       ======================================== */}
 
-      <section className="border-b border-ink/12 pt-[82px]">
-        <Container className="py-16 md:py-24 lg:py-32">
+      <section className="min-h-[72vh] border-b border-ink/12 pt-[82px]">
+        <Container className="flex min-h-[calc(72vh-82px)] flex-col justify-between py-14 md:py-20">
           <motion.div {...reveal}>
             <div className="flex items-center gap-3">
               <span className="h-px w-9 bg-green" />
 
               <span className="eyebrow text-green">
-                İletişim / TAMİS Teknoloji
+                TAMİS / İletişim
               </span>
             </div>
+          </motion.div>
 
-            <div className="mt-12 grid gap-12 lg:grid-cols-[1.2fr_.8fr] lg:items-end">
-              <h1 className="max-w-6xl text-[clamp(4rem,15vw,7rem)] font-semibold leading-[.82] tracking-[-.075em] lg:text-[clamp(6rem,9vw,10rem)]">
-                İletişime
-                <br />
-                <span className="text-green">geçelim.</span>
-              </h1>
+          <motion.div
+            {...reveal}
+            className="mt-20 grid gap-12 lg:grid-cols-[1.35fr_.65fr] lg:items-end"
+          >
+            <h1 className="max-w-6xl text-[clamp(4.2rem,15vw,8rem)] font-semibold leading-[.8] tracking-[-.08em] lg:text-[clamp(7rem,10vw,11rem)]">
+              Bağlantı
+              <br />
+              <span className="text-green">kuralım.</span>
+            </h1>
 
-              <div className="max-w-lg lg:pb-3">
-                <p className="text-base leading-8 text-ink/55 md:text-lg">
-                  Kurumsal iletişim ve genel bilgi talepleriniz için
-                  TAMİS Teknoloji ile iletişime geçebilirsiniz.
+            <div className="max-w-md lg:pb-3">
+              <p className="text-base leading-8 text-ink/55 md:text-lg">
+                Kurumsal iletişim, iş birlikleri ve genel bilgi
+                talepleri için bize ulaşabilirsiniz.
+              </p>
+
+              <div className="mt-10 flex items-center gap-4">
+                <span className="grid size-11 place-items-center rounded-full border border-ink/15">
+                  <ArrowDownRight size={17} />
+                </span>
+
+                <span className="text-[9px] font-bold uppercase tracking-[.18em] text-ink/35">
+                  İletişim bilgileri
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        </Container>
+      </section>
+
+      {/* ========================================
+          DIRECT CONTACT
+      ======================================== */}
+
+      <section className="bg-white py-20 md:py-32">
+        <Container>
+          <motion.div {...reveal}>
+            <div className="grid gap-12 lg:grid-cols-[.45fr_1.55fr] lg:gap-24">
+              <div>
+                <p className="eyebrow">
+                  01 / Doğrudan İletişim
                 </p>
+              </div>
+
+              <div className="border-t border-ink/15">
+                {/* EMAIL */}
 
                 <a
                   href="mailto:info@tamis.com.tr"
-                  className="mt-8 inline-flex items-center gap-3 border-b border-ink pb-2 text-xs font-bold uppercase tracking-[.15em]"
+                  className="group grid gap-6 border-b border-ink/15 py-8 transition-colors md:grid-cols-[60px_1fr_auto] md:items-center md:py-10"
                 >
-                  E-posta gönder
-                  <ArrowUpRight size={15} />
+                  <span className="grid size-11 place-items-center border border-ink/15 text-green transition-colors group-hover:border-green">
+                    <Mail size={17} />
+                  </span>
+
+                  <div>
+                    <span className="text-[9px] font-bold uppercase tracking-[.18em] text-ink/35">
+                      E-posta
+                    </span>
+
+                    <p className="mt-2 break-all text-[clamp(1.5rem,6vw,2.7rem)] font-medium tracking-[-.045em]">
+                      info@tamis.com.tr
+                    </p>
+                  </div>
+
+                  <ArrowUpRight
+                    size={20}
+                    className="hidden text-ink/25 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-green md:block"
+                  />
+                </a>
+
+                {/* PHONE */}
+
+                <a
+                  href="tel:+903123940135"
+                  className="group grid gap-6 border-b border-ink/15 py-8 transition-colors md:grid-cols-[60px_1fr_auto] md:items-center md:py-10"
+                >
+                  <span className="grid size-11 place-items-center border border-ink/15 text-green transition-colors group-hover:border-green">
+                    <Phone size={17} />
+                  </span>
+
+                  <div>
+                    <span className="text-[9px] font-bold uppercase tracking-[.18em] text-ink/35">
+                      Telefon
+                    </span>
+
+                    <p className="mt-2 text-[clamp(1.5rem,6vw,2.7rem)] font-medium tracking-[-.045em]">
+                      +90 312 394 01 35
+                    </p>
+                  </div>
+
+                  <ArrowUpRight
+                    size={20}
+                    className="hidden text-ink/25 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-green md:block"
+                  />
                 </a>
               </div>
             </div>
@@ -79,105 +140,42 @@ export default function Contact() {
       </section>
 
       {/* ========================================
-          CONTACT INFORMATION
+          LOCATION
       ======================================== */}
 
-      <section className="bg-white py-20 md:py-36">
-        <Container>
-          <motion.div
-            {...reveal}
-            className="grid gap-12 lg:grid-cols-[.6fr_1.4fr] lg:gap-20"
-          >
-            <div>
-              <p className="eyebrow">
-                01 / İletişim Bilgileri
-              </p>
-            </div>
-
-            <div>
-              <h2 className="max-w-5xl text-[clamp(3rem,10vw,5rem)] font-medium leading-[.95] tracking-[-.055em]">
-                Doğrudan
-                <br />
-                <span className="text-green">
-                  bize ulaşın.
-                </span>
-              </h2>
-
-              <div className="mt-14 border-t border-ink/15">
-                {contactItems.map((item) => {
-                  const Icon = item.icon;
-
-                  return (
-                    <a
-                      key={item.number}
-                      href={item.href}
-                      className="group grid gap-6 border-b border-ink/15 py-7 md:grid-cols-[70px_1fr_auto] md:items-center"
-                    >
-                      <div className="flex size-12 items-center justify-center border border-ink/15 transition-all duration-300 group-hover:border-green group-hover:text-green">
-                        <Icon size={18} />
-                      </div>
-
-                      <div>
-                        <div className="flex items-center gap-3">
-                          <span className="text-[9px] font-bold uppercase tracking-[.17em] text-green">
-                            {item.number}
-                          </span>
-
-                          <span className="text-[9px] font-bold uppercase tracking-[.17em] text-ink/35">
-                            {item.label}
-                          </span>
-                        </div>
-
-                        <p className="mt-3 break-words text-xl font-medium tracking-[-.035em] md:text-2xl">
-                          {item.value}
-                        </p>
-                      </div>
-
-                      <ArrowUpRight
-                        size={18}
-                        className="hidden text-ink/25 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-green md:block"
-                      />
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-          </motion.div>
-        </Container>
-      </section>
-
-      {/* ========================================
-          ADDRESS
-      ======================================== */}
-
-      <section className="border-y border-ink/12 py-20 md:py-36">
+      <section className="border-t border-ink/12 py-20 md:py-32">
         <Container>
           <motion.div {...reveal}>
-            <div className="grid gap-12 lg:grid-cols-[.6fr_1.4fr] lg:gap-20">
+            <div className="grid gap-12 lg:grid-cols-[.45fr_1.55fr] lg:gap-24">
               <div>
                 <p className="eyebrow">
-                  02 / Adres
+                  02 / Konum
                 </p>
               </div>
 
               <div>
-                <div className="flex size-14 items-center justify-center border border-green/20 text-green">
-                  <MapPin size={21} />
+                <div className="flex items-center gap-3 text-green">
+                  <MapPin size={17} />
+
+                  <span className="text-[9px] font-bold uppercase tracking-[.18em]">
+                    Ankara · Türkiye
+                  </span>
                 </div>
 
-                <h2 className="mt-8 max-w-4xl text-[clamp(2.6rem,9vw,4.5rem)] font-medium leading-[1] tracking-[-.055em]">
+                <address className="mt-8 max-w-5xl not-italic text-[clamp(2.6rem,8vw,5rem)] font-medium leading-[.98] tracking-[-.055em]">
                   Saray Mah.
                   <br />
                   50. Cad. 17/C
                   <br />
+
                   <span className="text-green">
                     Kahramankazan, Ankara
                   </span>
-                </h2>
 
-                <p className="mt-8 text-sm font-medium uppercase tracking-[.12em] text-ink/40">
-                  Türkiye · 06980
-                </p>
+                  <span className="mt-6 block text-sm font-semibold uppercase tracking-[.14em] text-ink/35">
+                    Türkiye · 06980
+                  </span>
+                </address>
               </div>
             </div>
           </motion.div>
@@ -188,108 +186,32 @@ export default function Contact() {
           MAP
       ======================================== */}
 
-      <section className="bg-white px-3 py-3 md:px-6 md:py-6">
+      <section className="bg-white">
         <motion.div
           {...reveal}
-          className="mx-auto max-w-[1700px]"
+          className="px-3 pb-3 md:px-6 md:pb-6"
         >
-          <div className="relative min-h-[420px] overflow-hidden bg-mist md:min-h-[600px]">
+          <div className="relative mx-auto h-[480px] max-w-[1700px] overflow-hidden bg-mist md:h-[680px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d24435.68836080939!2d32.598189!3d40.042811!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d33fa5d77d715f%3A0xa5434c7219f8c8de!2zVEFNxLBT!5e0!3m2!1str!2str!4v1789760539689!5m2!1str!2str"
-              title="TAMİS Teknoloji konumu"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d24435.68836080939!2d32.598189!3d40.042811!3m2!1i1024!1i768!4f13.1!3m3!1m2!1s0x14d33fa5d77d715f%3A0xa5434c7219f8c8de!2zVEFNxLBT!5e0!3m2!1str!2str!4v1789760539689!5m2!1str!2str"
+              title="TAMİS Teknoloji — Kahramankazan, Ankara"
               className="absolute inset-0 h-full w-full border-0"
               loading="lazy"
               allowFullScreen
               referrerPolicy="strict-origin-when-cross-origin"
             />
+
+            <div className="pointer-events-none absolute left-4 top-4 bg-paper/95 px-4 py-3 backdrop-blur-md md:left-6 md:top-6 md:px-5 md:py-4">
+              <span className="text-[9px] font-bold uppercase tracking-[.18em] text-green">
+                TAMİS Teknoloji
+              </span>
+
+              <p className="mt-1 text-xs font-medium text-ink/55">
+                Kahramankazan · Ankara
+              </p>
+            </div>
           </div>
         </motion.div>
-      </section>
-
-      {/* ========================================
-          CORPORATE CONTACT
-      ======================================== */}
-
-      <section className="bg-green py-20 text-white md:py-32">
-        <Container>
-          <motion.div {...reveal}>
-            <div className="grid gap-12 lg:grid-cols-[.65fr_1.35fr] lg:gap-20">
-              <p className="eyebrow text-white/45">
-                03 / Kurumsal İletişim
-              </p>
-
-              <div>
-                <h2 className="max-w-5xl text-[clamp(3rem,11vw,5.5rem)] font-medium leading-[.94] tracking-[-.06em]">
-                  Doğru konu.
-                  <br />
-                  <span className="text-white/45">
-                    Doğrudan iletişim.
-                  </span>
-                </h2>
-
-                <p className="mt-8 max-w-2xl text-base leading-8 text-white/60">
-                  Genel bilgi ve kurumsal iletişim talepleriniz için
-                  e-posta veya telefon üzerinden bize ulaşabilirsiniz.
-                </p>
-
-                <div className="mt-12 flex flex-col gap-4 sm:flex-row">
-                  <a
-                    href="mailto:info@tamis.com.tr"
-                    className="inline-flex min-h-12 items-center justify-center gap-3 border border-white bg-white px-6 py-4 text-[10px] font-bold uppercase tracking-[.15em] text-green transition-colors hover:bg-transparent hover:text-white"
-                  >
-                    E-posta gönder
-                    <ArrowUpRight size={15} />
-                  </a>
-
-                  <a
-                    href="tel:+903123940135"
-                    className="inline-flex min-h-12 items-center justify-center gap-3 border border-white/30 px-6 py-4 text-[10px] font-bold uppercase tracking-[.15em] text-white transition-colors hover:border-white"
-                  >
-                    Bizi arayın
-                    <Phone size={14} />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </Container>
-      </section>
-
-      {/* ========================================
-          FINAL
-      ======================================== */}
-
-      <section className="bg-paper py-20 md:py-28">
-        <Container>
-          <motion.div
-            {...reveal}
-            className="flex flex-col gap-8 border-t border-ink/15 pt-8 md:flex-row md:items-end md:justify-between"
-          >
-            <div>
-              <p className="eyebrow">
-                TAMİS Teknoloji
-              </p>
-
-              <p className="mt-5 max-w-xl text-sm leading-7 text-ink/50">
-                Saray Mah. 50. Cad. 17/C
-                <br />
-                Kahramankazan, Ankara / Türkiye 06980
-              </p>
-            </div>
-
-            <a
-              href="mailto:info@tamis.com.tr"
-              className="group inline-flex w-fit items-center gap-3 text-xs font-bold uppercase tracking-[.15em]"
-            >
-              info@tamis.com.tr
-
-              <ArrowUpRight
-                size={15}
-                className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-              />
-            </a>
-          </motion.div>
-        </Container>
       </section>
     </main>
   );
