@@ -233,7 +233,7 @@ export default function Header() {
               <Container className="grid grid-cols-12 py-10">
                 <div className="col-span-4">
                   <p className="eyebrow">
-                    TAMİS / NAVIGATION
+                    TAMİS 
                   </p>
 
                   <p className="mt-4 max-w-xs text-2xl font-medium tracking-[-.04em]">
@@ -304,7 +304,7 @@ export default function Header() {
 
               <div className="mb-2 flex items-center justify-between border-b border-white/15 pb-4">
                 <span className="text-[8px] font-bold uppercase tracking-[.22em] text-white/40">
-                  TAMİS / Navigation
+                  TAMİS 
                 </span>
 
                 <span className="text-[8px] font-bold uppercase tracking-[.22em] text-white/40">
