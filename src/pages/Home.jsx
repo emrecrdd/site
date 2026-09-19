@@ -123,7 +123,7 @@ export default function Home() {
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/5" />
             <div className="absolute left-5 top-5 z-10 border border-white/20 bg-black/25 px-3 py-2 text-[8px] font-bold uppercase tracking-[.18em] text-white backdrop-blur-sm md:left-6 md:top-6">
-              Engineering / Technology
+            
             </div>
           </motion.div>
         </Container>
@@ -359,7 +359,7 @@ export default function Home() {
                 className="absolute inset-0 z-[1] h-full w-full object-cover object-center"
                 onError={(event) => { event.currentTarget.style.display = "none"; }}
               />
-              <span className="media-label">R&amp;D / LAB / PROTOTYPE</span>
+             
             </div>
 
             <div className="flex flex-col justify-between lg:col-span-6 lg:pl-8">
@@ -426,7 +426,7 @@ export default function Home() {
                   className="absolute inset-0 z-[1] h-full w-full object-cover object-center"
                   onError={(event) => { event.currentTarget.style.display = "none"; }}
                 />
-                <span className="media-label">FACILITY / TEAM / CORPORATE</span>
+               
               </div>
 
               <Link
