@@ -1,1 +1,103 @@
-import {Hero,Statement,DarkBand} from "../components/ui/PageKit";import Container from "../components/ui/Container";export default function Media(){return <main><Hero index="07" eyebrow="Medya" title="Gelişmeleri" accent="paylaşıyoruz." copy="TAMİS Teknoloji'ye ait doğrulanmış kurumsal gelişmeler, teknoloji içerikleri ve yayınlar bu alanda sunulacak." media="MEDIA / NEWSROOM"/><Statement eyebrow="01 / Haberler" title="Kurumsal gelişmeler için" accent="editoryal alan." copy="Henüz doğrulanmış haber içeriği eklenmedi. Yayınlar geldiğinde tarih, kategori, görsel ve detay sayfası mimarisiyle sunulacak."/><section className="py-24"><Container><div className="media aspect-[16/7]"><span className="media-label">FEATURED STORY / PRESS IMAGE</span></div></Container></section><DarkBand eyebrow="02 / Basın Odası" title="Doğru bilgi. Tek merkez."><div id="basin" className="grid gap-8 md:grid-cols-3">{['Kurumsal Gelişmeler','Teknoloji & Ar-Ge','Ürün & Sistemler'].map(x=><div className="border-t border-white/20 pt-5" key={x}><h3 className="text-xl">{x}</h3><p className="mt-3 text-sm text-white/45">İçerik hazırlanıyor.</p></div>)}</div></DarkBand><section id="dokumanlar" className="bg-white py-24"><Container><p className="eyebrow">03 / Dokümanlar</p>{['Kurumsal Tanıtım','Ürün & Sistem Kataloğu','Basın Kiti'].map((x,i)=><div key={x} className="flex justify-between border-b rule py-6"><span><small className="mr-6 text-green">0{i+1}</small>{x}</span><span className="text-xs text-ink/35">İçerik hazırlanıyor</span></div>)}</Container></section></main>}
+import {
+  Hero,
+  Statement,
+  DarkBand,
+} from "../components/ui/PageKit";
+
+import Container from "../components/ui/Container";
+
+export default function Media() {
+  const categories = [
+    "Kurumsal Gelişmeler",
+    "Teknoloji & Ar-Ge",
+    "Ürün & Sistemler",
+  ];
+
+  const documents = [
+    "Kurumsal Tanıtım",
+    "Ürün & Sistem Kataloğu",
+    "Basın Kiti",
+  ];
+
+  return (
+    <main>
+      <Hero
+        eyebrow="Medya"
+        title="Gelişmeleri"
+        accent="paylaşıyoruz."
+        copy="TAMİS Teknoloji'ye ait doğrulanmış kurumsal gelişmeler, teknoloji içerikleri ve yayınlar bu alanda sunulacak."
+        media="MEDIA / NEWSROOM"
+      />
+
+      <Statement
+        eyebrow="Haberler"
+        title="Kurumsal gelişmeler için"
+        accent="editoryal alan."
+        copy="Henüz doğrulanmış haber içeriği eklenmedi. Yayınlar geldiğinde tarih, kategori, görsel ve detay sayfası mimarisiyle sunulacak."
+      />
+
+      <section className="py-24">
+        <Container>
+          <div className="media aspect-[16/7]">
+            <span className="media-label">
+              FEATURED STORY / PRESS IMAGE
+            </span>
+          </div>
+        </Container>
+      </section>
+
+      <DarkBand
+        eyebrow="Basın Odası"
+        title="Doğru bilgi. Tek merkez."
+      >
+        <div
+          id="basin"
+          className="grid gap-8 md:grid-cols-3"
+        >
+          {categories.map((category) => (
+            <div
+              key={category}
+              className="border-t border-white/20 pt-5"
+            >
+              <h3 className="text-xl">
+                {category}
+              </h3>
+
+              <p className="mt-3 text-sm text-white/45">
+                İçerik hazırlanıyor.
+              </p>
+            </div>
+          ))}
+        </div>
+      </DarkBand>
+
+      <section
+        id="dokumanlar"
+        className="bg-white py-24"
+      >
+        <Container>
+          <p className="eyebrow">
+            Dokümanlar
+          </p>
+
+          <div className="mt-10 border-t rule">
+            {documents.map((document) => (
+              <div
+                key={document}
+                className="flex flex-col gap-2 border-b rule py-6 sm:flex-row sm:items-center sm:justify-between"
+              >
+                <span className="font-medium">
+                  {document}
+                </span>
+
+                <span className="text-xs text-ink/35">
+                  İçerik hazırlanıyor
+                </span>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+    </main>
+  );
+}

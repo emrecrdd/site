@@ -1,1 +1,81 @@
-import {Hero,Statement,DarkBand,Cards} from "../components/ui/PageKit";import Container from "../components/ui/Container";export default function Research(){const p=[{title:"Araştırma",copy:"Problemi, teknoloji alanını ve uygulanabilir yaklaşımları anlamak."},{title:"Tasarım",copy:"Gereksinimleri sistem mimarisine dönüştürmek."},{title:"Prototip",copy:"Yaklaşımı erken aşamada sınamak."},{title:"Doğrulama",copy:"Tasarımı ölçmek, test etmek ve geliştirmek."}];return <main><Hero index="05" eyebrow="Teknoloji & Ar-Ge" title="Geleceği" accent="bugünden geliştirmek." copy="Araştırmayı, mühendislik bilgisini ve prototiplemeyi doğrulanabilir teknoloji çıktısına dönüştüren geliştirme yaklaşımı." media="R&D / LABORATORY"/><Statement eyebrow="01 / Ar-Ge" title="Bilgiyi," accent="mühendislik değerine dönüştürmek." copy="Teknoloji araştırmasını yalnızca keşif olarak değil, sistem gereksinimlerine bağlanan bir geliştirme süreci olarak ele alıyoruz."/><section className="py-24"><Container><Cards items={p}/></Container></section><DarkBand eyebrow="02 / Geliştirme yaşam döngüsü" title="Fikirden, doğrulanmış sisteme."><p className="max-w-2xl text-base leading-8 text-white/58">Erken prototipleme, ölçüm ve iterasyon; teknik belirsizliği geliştirme sürecinin erken aşamalarında azaltmayı hedefler.</p></DarkBand><section id="muhendislik" className="bg-white py-24"><Container><h2 className="title">Parçaları değil,<br/><span className="text-green">sistemin tamamını düşünmek.</span></h2></Container></section></main>}
+import {
+  Hero,
+  Statement,
+  DarkBand,
+  Cards,
+} from "../components/ui/PageKit";
+
+import Container from "../components/ui/Container";
+
+export default function Research() {
+  const process = [
+    {
+      title: "Araştırma",
+      copy: "Problemi, teknoloji alanını ve uygulanabilir yaklaşımları anlamak.",
+    },
+    {
+      title: "Tasarım",
+      copy: "Gereksinimleri sistem mimarisine dönüştürmek.",
+    },
+    {
+      title: "Prototip",
+      copy: "Yaklaşımı erken aşamada sınamak.",
+    },
+    {
+      title: "Doğrulama",
+      copy: "Tasarımı ölçmek, test etmek ve geliştirmek.",
+    },
+  ];
+
+  return (
+    <main>
+      <Hero
+        eyebrow="Teknoloji & Ar-Ge"
+        title="Geleceği"
+        accent="bugünden geliştirmek."
+        copy="Araştırmayı, mühendislik bilgisini ve prototiplemeyi doğrulanabilir teknoloji çıktısına dönüştüren geliştirme yaklaşımı."
+        media="R&D / LABORATORY"
+      />
+
+      <Statement
+        eyebrow="Ar-Ge"
+        title="Bilgiyi,"
+        accent="mühendislik değerine dönüştürmek."
+        copy="Teknoloji araştırmasını yalnızca keşif olarak değil, sistem gereksinimlerine bağlanan bir geliştirme süreci olarak ele alıyoruz."
+      />
+
+      <section className="py-24">
+        <Container>
+          <Cards items={process} />
+        </Container>
+      </section>
+
+      <DarkBand
+        eyebrow="Geliştirme yaşam döngüsü"
+        title="Fikirden, doğrulanmış sisteme."
+      >
+        <p className="max-w-2xl text-base leading-8 text-white/58">
+          Erken prototipleme, ölçüm ve iterasyon; teknik
+          belirsizliği geliştirme sürecinin erken aşamalarında
+          azaltmayı hedefler.
+        </p>
+      </DarkBand>
+
+      <section
+        id="muhendislik"
+        className="bg-white py-24"
+      >
+        <Container>
+          <h2 className="title">
+            Parçaları değil,
+            <br />
+
+            <span className="text-green">
+              sistemin tamamını düşünmek.
+            </span>
+          </h2>
+        </Container>
+      </section>
+    </main>
+  );
+}
