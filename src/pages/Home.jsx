@@ -122,9 +122,7 @@ export default function Home() {
               className="absolute inset-0 h-full w-full object-cover object-center"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/5" />
-            <div className="absolute left-5 top-5 z-10 border border-white/20 bg-black/25 px-3 py-2 text-[8px] font-bold uppercase tracking-[.18em] text-white backdrop-blur-sm md:left-6 md:top-6">
             
-            </div>
           </motion.div>
         </Container>
       </section>
