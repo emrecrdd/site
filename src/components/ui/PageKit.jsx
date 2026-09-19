@@ -28,6 +28,8 @@ export function Hero({
   accent,
   copy,
   media = "ENGINEERING / SYSTEM",
+  mediaSrc,
+  mediaType = "image",
 }) {
   return (
     <section className="min-w-0 border-b rule pt-[84px]">
@@ -70,7 +72,14 @@ export function Hero({
           {...reveal}
           className="media relative min-h-[420px] min-w-0 w-full max-w-full overflow-hidden md:min-h-[500px] lg:col-span-5 lg:min-h-0 lg:border-y-0 lg:border-r-0"
         >
-          <span className="media-label">
+          {mediaSrc && mediaType === "video" && (
+            <video src={mediaSrc} autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 h-full w-full object-cover" />
+          )}
+          {mediaSrc && mediaType !== "video" && (
+            <img src={mediaSrc} alt="" className="absolute inset-0 h-full w-full object-cover" />
+          )}
+          {mediaSrc && <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />}
+          <span className={`media-label ${mediaSrc ? "!text-white" : ""}`}>
             {media}
           </span>
         </motion.div>

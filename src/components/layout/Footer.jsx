@@ -5,8 +5,8 @@ import Container from "../ui/Container";
 const links = [
   ["Kurumsal", "/kurumsal"],
   ["Yetkinlikler", "/yetkinlikler"],
-  ["Ürünler", "/urunler"],
-  ["Teknoloji & Ar-Ge", "/ar-ge"],
+  ["Üretim Altyapısı", "/uretim-altyapisi"],
+  ["Ar-Ge", "/ar-ge"],
   ["Medya", "/medya"],
   ["Kariyer", "/kariyer"],
 ];
@@ -18,20 +18,19 @@ export default function Footer() {
         <div className="grid gap-16 border-b border-white/15 py-20 lg:grid-cols-12 lg:py-28">
           <div className="lg:col-span-7">
             <p className="text-[9px] font-bold uppercase tracking-[.2em] text-white/45">
-              TAMİS / TECHNOLOGY COMPANY
+              TAMİS / SAVUNMA & HAVACILIK
             </p>
 
             <h2 className="mt-8 text-[clamp(3.6rem,8vw,8rem)] font-medium leading-[.82] tracking-[-.07em]">
-              Mühendislik.
+              Savunma.
               <br />
-              Teknoloji.
+              Havacılık.
               <br />
-              <span className="text-white/38">Gelecek.</span>
+              <span className="text-white/38">Mühendislik.</span>
             </h2>
 
             <p className="mt-9 max-w-md text-sm leading-7 text-white/55">
-              Araştırmadan tasarıma, teknolojiden çalışan sistemlere
-              uzanan mühendislik yaklaşımı.
+              CNC talaşlı imalat, tasarım, prototipleme ve Ar-Ge kabiliyetlerini bir araya getiren üretim yaklaşımı.
             </p>
           </div>
 

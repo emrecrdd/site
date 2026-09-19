@@ -1,87 +1,15 @@
-import {
-  Hero,
-  Statement,
-  DarkBand,
-  Cards,
-} from "../components/ui/PageKit";
-
+import { Hero, Statement, DarkBand, Cards } from "../components/ui/PageKit";
 import Container from "../components/ui/Container";
-
-export default function Careers() {
-  const principles = [
-    {
-      title: "Merak",
-      copy: "Sorular sormak ve yeni yaklaşımları araştırmak.",
-    },
-    {
-      title: "Sorumluluk",
-      copy: "Üretilen işin teknik sonucunu sahiplenmek.",
-    },
-    {
-      title: "Birlikte Üretmek",
-      copy: "Farklı disiplinlerin bilgisini ortak hedefte buluşturmak.",
-    },
-    {
-      title: "Gelişim",
-      copy: "Bilgiyi ve yöntemi sürekli ileri taşımak.",
-    },
-  ];
-
-  return (
-    <main>
-      <Hero
-        eyebrow="Kariyer"
-        title="Geleceği"
-        accent="birlikte geliştir."
-        copy="Mühendislik problemlerine merakla yaklaşan ve ürettiği sistemin sorumluluğunu alan ekiplerle çalışmayı önemsiyoruz."
-        media="CAREERS / ENGINEERING TEAM"
-      />
-
-      <Statement
-        eyebrow="Kültür"
-        title="İyi mühendislik,"
-        accent="iyi insanlarla başlar."
-        copy="Çalışma kültürünü disiplinler arası iş birliği, teknik merak ve sürekli öğrenme üzerine kuran bir yaklaşım."
-      />
-
-      <section className="py-24">
-        <Container>
-          <Cards items={principles} />
-        </Container>
-      </section>
-
-      <DarkBand
-        eyebrow="Disiplinler"
-        title="Farklı uzmanlıklar. Ortak sistem."
-      >
-        <p className="text-base leading-8 text-white/55">
-          Elektronik · Gömülü Sistemler · Yazılım · Kontrol ·
-          Otonomi · Sistem Mühendisliği
-        </p>
-      </DarkBand>
-
-      <section
-        id="pozisyonlar"
-        className="bg-white py-24"
-      >
-        <Container>
-          <p className="eyebrow">
-            Açık Pozisyonlar
-          </p>
-
-          <h2 className="mt-8 title">
-            Yeni pozisyonlar
-            <br />
-            <span className="text-green">
-              burada yayınlanacak.
-            </span>
-          </h2>
-
-          <p className="copy mt-8 max-w-xl">
-            Doğrulanmış açık pozisyon bilgisi henüz eklenmedi.
-          </p>
-        </Container>
-      </section>
-    </main>
-  );
-}
+const principles=[
+ {title:"Teknik Merak",copy:"Üretim ve mühendislik problemlerine öğrenme isteğiyle yaklaşmak."},
+ {title:"Sorumluluk",copy:"Üretilen işin kalitesini ve teknik sonucunu sahiplenmek."},
+ {title:"Birlikte Üretmek",copy:"Tasarım, üretim ve Ar-Ge bilgisini ortak hedefte buluşturmak."},
+ {title:"Sürekli Gelişim",copy:"Bilgiyi, yöntemi ve üretim yetkinliğini ileri taşımak."},
+];
+export default function Careers(){return <main>
+ <Hero eyebrow="Kariyer" title="Üreten ekibin" accent="bir parçası olun." copy="TAMİS, çalışanlarının yetkinliğini ve motivasyonunu kurumsal gelişimin temel unsurlarından biri olarak görür." media="CAREERS / TAMİS"/>
+ <Statement eyebrow="Çalışma Kültürü" title="Mühendislik," accent="üretimle güçlenir." copy="Savunma ve havacılık odağındaki çalışmalarımızda teknik merak, sorumluluk ve birlikte üretme kültürünü önemsiyoruz."/>
+ <section className="py-24"><Container><Cards items={principles}/></Container></section>
+ <DarkBand eyebrow="Alanlar" title="Tasarım. İmalat. Ar-Ge."><p className="max-w-2xl text-base leading-8 text-white/55">CNC talaşlı imalat, tasarım ve prototipleme ile Ar-Ge çalışmalarının kesiştiği bir üretim ortamı.</p></DarkBand>
+ <section id="pozisyonlar" className="bg-white py-24"><Container><p className="eyebrow">Açık Pozisyonlar</p><h2 className="mt-8 title">Güncel ilanlar<br/><span className="text-green">burada yayınlanacak.</span></h2><p className="copy mt-8 max-w-xl">Şu anda kamuya açık doğrulanmış bir pozisyon bilgisi bulunmuyor.</p></Container></section>
+ </main>}

@@ -1,1 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://tamis.com.tr/</loc></url><url><loc>https://tamis.com.tr/kurumsal</loc></url><url><loc>https://tamis.com.tr/yetkinlikler</loc></url><url><loc>https://tamis.com.tr/urunler</loc></url><url><loc>https://tamis.com.tr/ar-ge</loc></url><url><loc>https://tamis.com.tr/teknolojiler</loc></url><url><loc>https://tamis.com.tr/medya</loc></url><url><loc>https://tamis.com.tr/kariyer</loc></url><url><loc>https://tamis.com.tr/iletisim</loc></url></urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://tamis.com.tr/</loc></url>
+  <url><loc>https://tamis.com.tr/kurumsal</loc></url>
+  <url><loc>https://tamis.com.tr/yetkinlikler</loc></url>
+  <url><loc>https://tamis.com.tr/uretim-altyapisi</loc></url>
+  <url><loc>https://tamis.com.tr/ar-ge</loc></url>
+  <url><loc>https://tamis.com.tr/medya</loc></url>
+  <url><loc>https://tamis.com.tr/kariyer</loc></url>
+  <url><loc>https://tamis.com.tr/iletisim</loc></url>
+</urlset>
