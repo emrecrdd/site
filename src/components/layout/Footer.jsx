@@ -1,1 +1,119 @@
-import {Link} from "react-router-dom";import {ArrowUpRight} from "lucide-react";import Container from "../ui/Container";const links=[["Kurumsal","/kurumsal"],["Yetkinlikler","/yetkinlikler"],["Ürünler","/urunler"],["Teknoloji & Ar-Ge","/ar-ge"],["Medya","/medya"],["Kariyer","/kariyer"]];export default function Footer(){return <footer className="bg-green text-white"><Container><div className="grid gap-16 border-b border-white/15 py-20 lg:grid-cols-12 lg:py-28"><div className="lg:col-span-7"><p className="text-[9px] font-bold uppercase tracking-[.2em] text-white/45">TAMİS / TECHNOLOGY COMPANY</p><h2 className="mt-8 text-[clamp(3.6rem,8vw,8rem)] font-medium leading-[.82] tracking-[-.07em]">Mühendislik.<br/>Teknoloji.<br/><span className="text-white/38">Gelecek.</span></h2><p className="mt-9 max-w-md text-sm leading-7 text-white/55">Araştırmadan tasarıma, teknolojiden çalışan sistemlere uzanan mühendislik yaklaşımı.</p></div><div className="lg:col-span-5 lg:border-l lg:border-white/15 lg:pl-12"><p className="text-[9px] font-bold uppercase tracking-[.2em] text-white/45">Keşfet</p><div className="mt-6">{links.map(([l,t],i)=><Link key={t} to={t} className="group flex items-center justify-between border-b border-white/15 py-4"><span className="text-lg"><small className="mr-4 text-[9px] text-white/35">0{i+1}</small>{l}</span><ArrowUpRight size={14} className="text-white/35 group-hover:text-white"/></Link>)}</div><Link to="/iletisim" className="group mt-10 flex items-center justify-between border border-white/20 p-5"><div><p className="text-[9px] uppercase tracking-[.18em] text-white/40">Kurumsal iletişim</p><p className="mt-2 text-xl">İletişime geçin</p></div><span className="grid size-10 place-items-center border border-white/20 group-hover:bg-white group-hover:text-green"><ArrowUpRight size={15}/></span></Link></div></div><div className="relative overflow-hidden border-b border-white/15 py-12 md:py-16"><div className="flex items-end justify-between"><img src="/brand/tamis-logo.png" alt="TAMİS Teknoloji" className="w-[180px] brightness-0 invert md:w-[240px]"/><span className="text-[9px] font-bold uppercase tracking-[.18em] text-white/35">Ankara · Türkiye / 2026</span></div></div><div className="flex flex-col gap-4 py-7 text-[9px] font-bold uppercase tracking-[.14em] text-white/40 md:flex-row md:justify-between"><span>© 2026 TAMİS Teknoloji · Tüm hakları saklıdır.</span><div className="flex gap-6"><Link to="/kurumsal#kalite">Kalite & Etik</Link><Link to="/medya#basin">Basın</Link><Link to="/iletisim">İletişim</Link></div></div></Container></footer>}
+import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
+import Container from "../ui/Container";
+
+const links = [
+  ["Kurumsal", "/kurumsal"],
+  ["Yetkinlikler", "/yetkinlikler"],
+  ["Ürünler", "/urunler"],
+  ["Teknoloji & Ar-Ge", "/ar-ge"],
+  ["Medya", "/medya"],
+  ["Kariyer", "/kariyer"],
+];
+
+export default function Footer() {
+  return (
+    <footer className="bg-green text-white">
+      <Container>
+        <div className="grid gap-16 border-b border-white/15 py-20 lg:grid-cols-12 lg:py-28">
+          <div className="lg:col-span-7">
+            <p className="text-[9px] font-bold uppercase tracking-[.2em] text-white/45">
+              TAMİS / TECHNOLOGY COMPANY
+            </p>
+
+            <h2 className="mt-8 text-[clamp(3.6rem,8vw,8rem)] font-medium leading-[.82] tracking-[-.07em]">
+              Mühendislik.
+              <br />
+              Teknoloji.
+              <br />
+              <span className="text-white/38">Gelecek.</span>
+            </h2>
+
+            <p className="mt-9 max-w-md text-sm leading-7 text-white/55">
+              Araştırmadan tasarıma, teknolojiden çalışan sistemlere
+              uzanan mühendislik yaklaşımı.
+            </p>
+          </div>
+
+          <div className="lg:col-span-5 lg:border-l lg:border-white/15 lg:pl-12">
+            <p className="text-[9px] font-bold uppercase tracking-[.2em] text-white/45">
+              Keşfet
+            </p>
+
+            <div className="mt-6">
+              {links.map(([label, target]) => (
+                <Link
+                  key={target}
+                  to={target}
+                  className="group flex items-center justify-between border-b border-white/15 py-4"
+                >
+                  <span className="text-lg">
+                    {label}
+                  </span>
+
+                  <ArrowUpRight
+                    size={14}
+                    className="text-white/35 transition-colors group-hover:text-white"
+                  />
+                </Link>
+              ))}
+            </div>
+
+            <Link
+              to="/iletisim"
+              className="group mt-10 flex items-center justify-between border border-white/20 p-5"
+            >
+              <div>
+                <p className="text-[9px] uppercase tracking-[.18em] text-white/40">
+                  Kurumsal iletişim
+                </p>
+
+                <p className="mt-2 text-xl">
+                  İletişime geçin
+                </p>
+              </div>
+
+              <span className="grid size-10 place-items-center border border-white/20 group-hover:bg-white group-hover:text-green">
+                <ArrowUpRight size={15} />
+              </span>
+            </Link>
+          </div>
+        </div>
+
+        <div className="relative overflow-hidden border-b border-white/15 py-12 md:py-16">
+          <div className="flex items-end justify-between">
+            <img
+              src="/brand/tamis-logo.png"
+              alt="TAMİS Teknoloji"
+              className="w-[180px] brightness-0 invert md:w-[240px]"
+            />
+
+            <span className="text-[9px] font-bold uppercase tracking-[.18em] text-white/35">
+              Ankara · Türkiye / 2026
+            </span>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-4 py-7 text-[9px] font-bold uppercase tracking-[.14em] text-white/40 md:flex-row md:justify-between">
+          <span>
+            © 2026 TAMİS Teknoloji · Tüm hakları saklıdır.
+          </span>
+
+          <div className="flex gap-6">
+            <Link to="/kurumsal#kalite">
+              Kalite & Etik
+            </Link>
+
+            <Link to="/medya#basin">
+              Basın
+            </Link>
+
+            <Link to="/iletisim">
+              İletişim
+            </Link>
+          </div>
+        </div>
+      </Container>
+    </footer>
+  );
+}

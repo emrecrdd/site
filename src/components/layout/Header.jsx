@@ -243,18 +243,13 @@ export default function Header() {
 
                 <div className="col-span-8 grid grid-cols-2 gap-x-12">
                   {nav[open].children.map(
-                    ([label, target], index) => (
+                    ([label, target]) => (
                       <Link
                         key={`${label}-${target}`}
                         to={target}
                         className="group flex items-center justify-between border-b border-ink/12 py-4"
                       >
                         <span className="text-sm font-medium">
-                          {String(index + 1).padStart(
-                            2,
-                            "0"
-                          )}
-                          {" / "}
                           {label}
                         </span>
 
@@ -328,9 +323,6 @@ export default function Header() {
                           to={item.to}
                           className="group flex min-w-0 flex-1 items-center py-[18px]"
                         >
-                          <span className="mr-4 w-5 shrink-0 text-[8px] font-bold tracking-[.18em] text-white/35">
-                            {String(index + 1).padStart(2, "0")}
-                          </span>
 
                           <span
                             className={`min-w-0 text-[clamp(1.18rem,5.1vw,1.5rem)] font-medium leading-[1.05] tracking-[-.035em] transition-colors ${
@@ -390,18 +382,13 @@ export default function Header() {
                             >
                               <div className="border-t border-white/10 pb-3 pl-9">
                                 {item.children.map(
-                                  ([label, target], childIndex) => (
+                                  ([label, target]) => (
                                     <Link
                                       key={`${label}-${target}`}
                                       to={target}
                                       className="group flex items-center justify-between border-b border-white/[0.08] py-3 text-[11px] tracking-[-.01em] text-white/55 transition-colors hover:text-white"
                                     >
                                       <span>
-                                        <span className="mr-3 text-[8px] font-bold tracking-[.16em] text-white/25">
-                                          {String(
-                                            childIndex + 1
-                                          ).padStart(2, "0")}
-                                        </span>
 
                                         {label}
                                       </span>
@@ -431,9 +418,6 @@ export default function Header() {
                   className="group flex items-center justify-between border border-white/20 px-5 py-4 transition-colors hover:bg-white hover:text-green"
                 >
                   <div className="flex items-center gap-4">
-                    <span className="text-[8px] font-bold tracking-[.18em] text-white/30 transition-colors group-hover:text-green/45">
-                      07
-                    </span>
 
                     <span className="text-[10px] font-bold uppercase tracking-[.18em]">
                       İletişim
