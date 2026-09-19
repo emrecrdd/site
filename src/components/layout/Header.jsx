@@ -68,6 +68,13 @@ export default function Header() {
   }, []);
 
   const active = (item) => {
+    if (item.to === "/ar-ge") {
+      return (
+        loc.pathname === "/ar-ge" ||
+        loc.pathname === "/teknolojiler"
+      );
+    }
+
     return (
       loc.pathname === item.to ||
       loc.pathname.startsWith(`${item.to}/`)

@@ -281,3 +281,14 @@ button:focus-visible {
     scroll-behavior: auto !important;
   }
 }
+/* =========================
+   TAMIS EDITORIAL SYSTEM
+========================= */
+.micro-label{font-size:9px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:rgba(16,27,23,.34)}
+.display-page{max-width:100%;font-size:clamp(3.6rem,7.2vw,7.8rem);line-height:.84;letter-spacing:-.072em;font-weight:520}
+.dark-title{max-width:1100px;font-size:clamp(3rem,7vw,7.2rem);line-height:.86;letter-spacing:-.065em;font-weight:520}
+.media-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.04),transparent 45%,rgba(0,0,0,.22))}
+.data-value{font-size:clamp(2.4rem,5vw,5.6rem);line-height:.9;letter-spacing:-.06em;font-weight:520}
+.data-label{margin-top:1rem;font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.editorial-link{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;border-top:1px solid rgba(16,27,23,.14);padding:1.5rem 0;transition:padding .3s,color .3s}.editorial-link:hover{padding-left:.5rem;color:#0d3b2e}
+@media(max-width:767px){.display-page{font-size:clamp(3.1rem,14.5vw,5.1rem);line-height:.87;letter-spacing:-.06em}.dark-title{font-size:clamp(2.8rem,13vw,5rem)}}
