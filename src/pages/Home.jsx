@@ -8,57 +8,68 @@ import {
 import Container from "../components/ui/Container";
 import { reveal } from "../components/ui/PageKit";
 
-const caps = [
-  [
-    "Savunma Sistemleri",
-    "Sistem seviyesi mühendislik, entegrasyon ve doğrulama yaklaşımı.",
-    "/yetkinlikler#savunma",
-  ],
-  [
-    "Elektronik Teknolojiler",
-    "Gömülü sistemler, kontrol elektroniği ve elektronik tasarım.",
-    "/yetkinlikler#elektronik",
-  ],
-  [
-    "Otonom Sistemler",
-    "Algılama, karar ve kontrol katmanlarını bir araya getiren platformlar.",
-    "/yetkinlikler#otonom",
-  ],
-  [
-    "Yazılım & Yapay Zekâ",
-    "Kritik sistemler için güvenilir yazılım ve veri odaklı çözümler.",
-    "/yetkinlikler#yazilim",
-  ],
+const capabilities = [
+  {
+    title: "CNC Talaşlı İmalat",
+    copy: "CNC işleme ve tornalama altyapısıyla hassas parça imalatı.",
+    to: "/yetkinlikler#cnc",
+  },
+  {
+    title: "Tasarım & Prototipleme",
+    copy: "Teknik ihtiyaçların tasarımdan fiziksel prototipe taşınması.",
+    to: "/yetkinlikler#prototipleme",
+  },
+  {
+    title: "Savunma Sanayii Ar-Ge",
+    copy: "Savunma sanayiine yönelik Ar-Ge ve prototip çalışmalarının yürütülmesi.",
+    to: "/ar-ge",
+  },
+];
+
+const machines = [
+  {
+    value: "4 Eksen",
+    title: "CNC Dik İşleme",
+  },
+  {
+    value: "3 Eksen",
+    title: "CNC Dik İşleme",
+  },
+  {
+    value: "10 İnç",
+    title: "CNC Torna",
+  },
+  {
+    value: "4 Metre",
+    title: "Metal Karot Delici Üniversal Torna",
+  },
+  {
+    value: "1,5 Metre",
+    title: "Üniversal Torna",
+  },
+  {
+    value: "160 Ton",
+    title: "Pres",
+  },
 ];
 
 const process = [
   {
-    title: "Araştırma",
-    copy: "Problemi ve teknoloji alanını anlamak.",
+    title: "İhtiyacın Tanımlanması",
+    copy: "Teknik gereksinimlerin ve üretim ihtiyacının belirlenmesi.",
   },
   {
     title: "Tasarım",
-    copy: "Gereksinimleri sistem mimarisine dönüştürmek.",
+    copy: "Gereksinimlerin üretilebilir bir tasarıma dönüştürülmesi.",
   },
   {
-    title: "Prototip",
-    copy: "Yaklaşımı erken aşamada fiziksel olarak sınamak.",
+    title: "Prototipleme",
+    copy: "Tasarımın fiziksel prototip üzerinden geliştirilmesi.",
   },
   {
-    title: "Doğrulama",
-    copy: "Tasarımı ölçmek, test etmek ve geliştirmek.",
+    title: "İmalat",
+    copy: "Parçaların uygun üretim ve işleme yöntemleriyle imal edilmesi.",
   },
-  {
-    title: "Entegrasyon",
-    copy: "Alt sistemleri çalışan bir bütün haline getirmek.",
-  },
-];
-
-const systemLayers = [
-  "Algılama & Veri",
-  "Elektronik & Kontrol",
-  "Yazılım & Otonomi",
-  "Sistem Entegrasyonu",
 ];
 
 export default function Home() {
@@ -67,14 +78,14 @@ export default function Home() {
       {/* HERO */}
 
       <section className="pt-[84px]">
-        <Container className="grid min-h-[calc(100svh-84px)] lg:grid-cols-12">
+        <Container className="grid min-h-[calc(100svh-84px)] min-w-0 lg:grid-cols-12">
           <motion.div
             {...reveal}
-            className="flex flex-col justify-between py-9 lg:col-span-5 lg:pr-12"
+            className="flex min-w-0 flex-col justify-between py-9 lg:col-span-5 lg:pr-12"
           >
             <div>
               <p className="eyebrow text-green">
-                Türkiye · İleri Teknoloji
+                Ankara · 1987'den Bugüne
               </p>
             </div>
 
@@ -83,18 +94,21 @@ export default function Home() {
                 TAMİS Teknoloji
               </p>
 
-              <h1 className="display">
-                Fikirden
+              <h1 className="display max-w-full">
+                Hassas imalattan
                 <br />
+
                 <span className="text-green">
-                  sisteme.
+                  prototipe.
                 </span>
               </h1>
 
               <p className="copy mt-9 max-w-lg border-t rule pt-7">
-                Savunma, elektronik ve ileri teknoloji
-                alanlarında yüksek katma değerli sistemler
-                geliştiriyoruz.
+                TAMİS; CNC talaşlı imalat, tasarım ve
+                prototipleme alanlarında faaliyet gösteren,
+                savunma sanayiine yönelik Ar-Ge ve prototip
+                çalışmaları gerçekleştiren Ankara merkezli bir
+                sanayi ve teknoloji şirketidir.
               </p>
 
               <Link
@@ -118,43 +132,44 @@ export default function Home() {
           >
             <img
               src="/media/home/hero/home-hero.png"
-              alt="Hassas metal işleme ve CNC üretim detayı"
+              alt="CNC talaşlı imalat ve hassas metal işleme"
               className="absolute inset-0 h-full w-full object-cover object-center"
             />
+
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/5" />
-            
           </motion.div>
         </Container>
       </section>
 
-      {/* YAKLAŞIM */}
+      {/* NE YAPIYORUZ */}
 
       <section className="bg-white py-24 md:py-36">
         <Container>
           <motion.div
             {...reveal}
-            className="grid gap-12 lg:grid-cols-12"
+            className="grid min-w-0 gap-12 lg:grid-cols-12"
           >
-            <div className="lg:col-span-3">
+            <div className="min-w-0 lg:col-span-3">
               <p className="eyebrow">
-                Yaklaşım
+                Ne Yapıyoruz?
               </p>
             </div>
 
-            <div className="lg:col-span-9">
-              <h2 className="title">
-                Teknolojiyi yalnızca
+            <div className="min-w-0 lg:col-span-9">
+              <h2 className="title max-w-full">
+                Tasarımdan
                 <br />
-                kullanmıyoruz.{" "}
+
                 <span className="text-green">
-                  Geliştiriyoruz.
+                  üretime.
                 </span>
               </h2>
 
               <p className="copy mt-10 max-w-2xl border-t rule pt-8">
-                Araştırma, tasarım, prototipleme, doğrulama ve
-                sistem entegrasyonunu aynı mühendislik
-                yaklaşımının parçaları olarak ele alıyoruz.
+                Tasarım ve prototipleme çalışmalarını CNC talaşlı
+                imalat kabiliyetleriyle bir araya getiriyor;
+                savunma sanayiine yönelik Ar-Ge ve prototip
+                çalışmalarını üretim altyapımızla destekliyoruz.
               </p>
             </div>
           </motion.div>
@@ -165,35 +180,36 @@ export default function Home() {
 
       <section className="border-y rule">
         <Container>
-          <div className="grid lg:grid-cols-12">
-            <div className="py-16 lg:col-span-4 lg:border-r rule lg:pr-12">
+          <div className="grid min-w-0 lg:grid-cols-12">
+            <div className="min-w-0 py-16 lg:col-span-4 lg:border-r rule lg:pr-12">
               <p className="eyebrow">
                 Yetkinlikler
               </p>
 
-              <h2 className="mt-8 text-5xl font-medium leading-[.92] tracking-[-.055em]">
-                Disiplinler
+              <h2 className="mt-8 break-words text-5xl font-medium leading-[.92] tracking-[-.055em]">
+                Mühendislik
                 <br />
+
                 <span className="text-green">
-                  birlikte çalışır.
+                  üretimle buluşur.
                 </span>
               </h2>
             </div>
 
-            <div className="lg:col-span-8">
-              {caps.map(([title, copy, to]) => (
+            <div className="min-w-0 lg:col-span-8">
+              {capabilities.map((item) => (
                 <Link
-                  key={title}
-                  to={to}
-                  className="group grid gap-4 border-b rule py-7 md:grid-cols-[1fr_auto] md:items-center md:px-8"
+                  key={item.title}
+                  to={item.to}
+                  className="group grid min-w-0 gap-4 border-b rule py-7 md:grid-cols-[1fr_auto] md:items-center md:px-8"
                 >
-                  <div>
-                    <h3 className="text-2xl font-medium tracking-[-.04em]">
-                      {title}
+                  <div className="min-w-0">
+                    <h3 className="break-words text-2xl font-medium tracking-[-.04em]">
+                      {item.title}
                     </h3>
 
-                    <p className="mt-2 text-sm leading-6 text-ink/45">
-                      {copy}
+                    <p className="mt-2 max-w-xl text-sm leading-6 text-ink/45">
+                      {item.copy}
                     </p>
                   </div>
 
@@ -208,49 +224,54 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* SİSTEM MİMARİSİ */}
+      {/* ÜRETİM ALTYAPISI */}
 
       <section className="technical-grid bg-green py-24 text-white md:py-32">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-4">
+          <div className="grid min-w-0 gap-12 lg:grid-cols-12">
+            <div className="min-w-0 lg:col-span-4">
               <p className="text-[9px] font-bold uppercase tracking-[.2em] text-white/45">
-                Sistem Mimarisi
+                Üretim Altyapısı
               </p>
 
-              <h2 className="mt-8 text-5xl font-medium leading-[.9] tracking-[-.055em] md:text-6xl">
-                Tek teknoloji değil.
+              <h2 className="mt-8 break-words text-5xl font-medium leading-[.9] tracking-[-.055em] md:text-6xl">
+                Makine
                 <br />
+
                 <span className="text-white/40">
-                  Bütün sistem.
+                  parkımız.
                 </span>
               </h2>
+
+              <p className="mt-8 max-w-sm text-sm leading-7 text-white/55">
+                CNC işleme, tornalama ve pres operasyonlarını
+                destekleyen üretim altyapısı.
+              </p>
             </div>
 
-            <div className="lg:col-span-8 lg:border-l lg:border-white/15 lg:pl-12">
-              <div className="grid md:grid-cols-2">
-                {systemLayers.map((title) => (
+            <div className="min-w-0 lg:col-span-8 lg:border-l lg:border-white/15 lg:pl-12">
+              <div className="grid min-w-0 md:grid-cols-2">
+                {machines.map((machine) => (
                   <div
-                    key={title}
-                    className="border-b border-white/15 py-8 md:p-8"
+                    key={`${machine.value}-${machine.title}`}
+                    className="min-w-0 border-b border-white/15 py-8 md:p-8"
                   >
-                    <h3 className="text-2xl">
-                      {title}
-                    </h3>
-
-                    <p className="mt-3 text-sm leading-7 text-white/48">
-                      Birbirinden kopuk bileşenler yerine,
-                      birlikte çalışan teknoloji katmanları.
+                    <p className="text-[10px] font-bold uppercase tracking-[.18em] text-white/40">
+                      {machine.value}
                     </p>
+
+                    <h3 className="mt-3 break-words text-2xl font-medium tracking-[-.035em]">
+                      {machine.title}
+                    </h3>
                   </div>
                 ))}
               </div>
 
               <Link
-                to="/teknolojiler"
+                to="/yetkinlikler"
                 className="btn btn-light mt-10"
               >
-                Teknoloji alanları
+                Üretim yetkinlikleri
                 <ArrowUpRight size={13} />
               </Link>
             </div>
@@ -258,69 +279,73 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ÜRÜNLER */}
+      {/* SAVUNMA SANAYİİ */}
 
       <section className="bg-[#e2e7e1] py-24 md:py-32">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-4">
+          <div className="grid min-w-0 gap-12 lg:grid-cols-12">
+            <div className="min-w-0 lg:col-span-4">
               <p className="eyebrow">
-                Ürünler
+                Savunma Sanayii
               </p>
 
-              <h2 className="mt-8 text-5xl font-medium leading-[.9] tracking-[-.055em] md:text-6xl">
-                Mühendislik
+              <h2 className="mt-8 break-words text-5xl font-medium leading-[.9] tracking-[-.055em] md:text-6xl">
+                Ar-Ge'den
                 <br />
+
                 <span className="text-green">
-                  ürüne dönüşür.
+                  prototipe.
                 </span>
               </h2>
-
-              <p className="copy mt-8 max-w-sm">
-                Doğrulanmış ürün bilgileri geldiğinde sistem
-                aileleri burada güçlü görsel anlatımla
-                sunulacak.
-              </p>
-
-              <Link
-                to="/urunler"
-                className="btn mt-8"
-              >
-                Ürünleri incele
-                <ArrowUpRight size={13} />
-              </Link>
             </div>
 
-            <div className="media relative aspect-[16/10] min-w-0 overflow-hidden lg:col-span-8">
-              <img
-                src="/media/home/products/home-product.png"
-                alt="TAMİS ürün sistemi"
-                className="absolute inset-0 z-[1] h-full w-full object-cover object-center"
-                onError={(event) => { event.currentTarget.style.display = "none"; }}
-              />
-              <span className="media-label">FEATURED SYSTEM / PRODUCT RENDER</span>
+            <div className="min-w-0 lg:col-span-8">
+              <p className="copy max-w-2xl">
+                TAMİS, savunma sanayiine yönelik Ar-Ge ve
+                prototip çalışmalarını; tasarım, prototipleme ve
+                CNC talaşlı imalat kabiliyetleriyle
+                desteklemektedir.
+              </p>
+
+              <div className="mt-10 border-t rule pt-8">
+                <p className="max-w-xl text-sm leading-7 text-ink/50">
+                  Proje ve ürün detaylarının gizlilik
+                  gereksinimleri doğrultusunda, kamuya açık
+                  kurumsal iletişimde üretim ve mühendislik
+                  yetkinlikleri esas alınmaktadır.
+                </p>
+
+                <Link
+                  to="/ar-ge"
+                  className="btn mt-8"
+                >
+                  Ar-Ge yaklaşımı
+                  <ArrowUpRight size={13} />
+                </Link>
+              </div>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* MÜHENDİSLİK */}
+      {/* TASARIMDAN İMALATA */}
 
       <section className="bg-white py-24 md:py-32">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-3">
+          <div className="grid min-w-0 gap-10 lg:grid-cols-12">
+            <div className="min-w-0 lg:col-span-3">
               <p className="eyebrow">
-                Mühendislik
+                Çalışma Yaklaşımı
               </p>
             </div>
 
-            <div className="lg:col-span-9">
-              <h2 className="title">
-                Fikirden,
+            <div className="min-w-0 lg:col-span-9">
+              <h2 className="title max-w-full">
+                Tasarımdan,
                 <br />
+
                 <span className="text-green">
-                  doğrulanmış sisteme.
+                  imalata.
                 </span>
               </h2>
 
@@ -328,9 +353,9 @@ export default function Home() {
                 {process.map((item) => (
                   <div
                     key={item.title}
-                    className="grid gap-3 border-b rule py-7 md:grid-cols-12"
+                    className="grid min-w-0 gap-3 border-b rule py-7 md:grid-cols-12"
                   >
-                    <h3 className="text-2xl font-medium md:col-span-5">
+                    <h3 className="break-words text-2xl font-medium md:col-span-5">
                       {item.title}
                     </h3>
 
@@ -349,39 +374,39 @@ export default function Home() {
 
       <section className="border-y rule py-24 md:py-32">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-12">
+          <div className="grid min-w-0 gap-12 lg:grid-cols-12">
             <div className="media relative aspect-[4/3] min-w-0 overflow-hidden lg:col-span-6">
               <img
                 src="/media/home/research/home-research.png"
-                alt="Araştırma ve geliştirme çalışması"
+                alt="Ar-Ge ve prototipleme çalışması"
                 className="absolute inset-0 z-[1] h-full w-full object-cover object-center"
-                onError={(event) => { event.currentTarget.style.display = "none"; }}
+                onError={(event) => {
+                  event.currentTarget.style.display = "none";
+                }}
               />
-             
             </div>
 
-            <div className="flex flex-col justify-between lg:col-span-6 lg:pl-8">
+            <div className="flex min-w-0 flex-col justify-between lg:col-span-6 lg:pl-8">
               <div>
                 <p className="eyebrow">
                   Araştırma &amp; Geliştirme
                 </p>
 
-                <h2 className="mt-9 title">
-                  Yarının
+                <h2 className="title mt-9 max-w-full">
+                  Savunma sanayii için
                   <br />
-                  gereksinimleri
-                  <br />
+
                   <span className="text-green">
-                    için.
+                    Ar-Ge ve prototip.
                   </span>
                 </h2>
               </div>
 
               <div className="mt-12 border-t rule pt-7">
                 <p className="copy max-w-lg">
-                  Bugünün ihtiyaçlarının ötesinde, gelecekte
-                  ihtiyaç duyulacak teknolojilere odaklanan
-                  uzun vadeli mühendislik yaklaşımı.
+                  Savunma sanayiine yönelik Ar-Ge ve prototip
+                  çalışmalarını tasarım ve üretim
+                  kabiliyetlerimizle birlikte ele alıyoruz.
                 </p>
 
                 <Link
@@ -401,30 +426,39 @@ export default function Home() {
 
       <section className="technical-grid bg-[#e1e5df] py-24 md:py-32">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-3">
+          <div className="grid min-w-0 gap-12 lg:grid-cols-12">
+            <div className="min-w-0 lg:col-span-3">
               <p className="eyebrow">
-                Kurumsal
+                1987'den Bugüne
               </p>
             </div>
 
-            <div className="lg:col-span-9">
-              <h2 className="title">
-                Mühendislik odağında
+            <div className="min-w-0 lg:col-span-9">
+              <h2 className="title max-w-full">
+                Tecrübeden
                 <br />
+
                 <span className="text-green">
-                  büyüyen teknoloji şirketi.
+                  geleceğin üretimine.
                 </span>
               </h2>
+
+              <p className="copy mt-9 max-w-2xl">
+                Ankara merkezli TAMİS, 1987'den bu yana edindiği
+                üretim tecrübesini Ar-Ge, tasarım,
+                prototipleme ve talaşlı imalat kabiliyetleriyle
+                geliştirmektedir.
+              </p>
 
               <div className="media relative mt-12 aspect-[16/7] min-w-0 overflow-hidden">
                 <img
                   src="/media/home/corporate/home-corporate.png"
-                  alt="Kurumsal mühendislik ve teknoloji ortamı"
+                  alt="TAMİS kurumsal teknoloji ve üretim yaklaşımı"
                   className="absolute inset-0 z-[1] h-full w-full object-cover object-center"
-                  onError={(event) => { event.currentTarget.style.display = "none"; }}
+                  onError={(event) => {
+                    event.currentTarget.style.display = "none";
+                  }}
                 />
-               
               </div>
 
               <Link
