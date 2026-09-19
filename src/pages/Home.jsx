@@ -114,15 +114,17 @@ export default function Home() {
 
           <motion.div
             {...reveal}
-            className="media -mx-5 min-h-[520px] md:-mx-10 lg:col-span-7 lg:mx-0"
+            className="media relative min-h-[420px] min-w-0 w-full max-w-full overflow-hidden md:min-h-[520px] lg:col-span-7 lg:min-h-0"
           >
-            <div className="absolute left-6 top-6 z-10 border border-green/20 bg-paper/80 px-3 py-2 text-[8px] font-bold uppercase tracking-[.18em] text-green">
+            <img
+              src="/media/home/hero/home-hero.png"
+              alt="Hassas metal işleme ve CNC üretim detayı"
+              className="absolute inset-0 h-full w-full object-cover object-center"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/5" />
+            <div className="absolute left-5 top-5 z-10 border border-white/20 bg-black/25 px-3 py-2 text-[8px] font-bold uppercase tracking-[.18em] text-white backdrop-blur-sm md:left-6 md:top-6">
               Engineering / Technology
             </div>
-
-            <span className="media-label">
-              HERO / PRODUCT · FACILITY · ENGINEERING
-            </span>
           </motion.div>
         </Container>
       </section>
@@ -291,10 +293,14 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="media aspect-[16/10] lg:col-span-8">
-              <span className="media-label">
-                FEATURED SYSTEM / PRODUCT RENDER
-              </span>
+            <div className="media relative aspect-[16/10] min-w-0 overflow-hidden lg:col-span-8">
+              <img
+                src="/media/home/products/home-product.png"
+                alt="TAMİS ürün sistemi"
+                className="absolute inset-0 z-[1] h-full w-full object-cover object-center"
+                onError={(event) => { event.currentTarget.style.display = "none"; }}
+              />
+              <span className="media-label">FEATURED SYSTEM / PRODUCT RENDER</span>
             </div>
           </div>
         </Container>
@@ -346,10 +352,14 @@ export default function Home() {
       <section className="border-y rule py-24 md:py-32">
         <Container>
           <div className="grid gap-12 lg:grid-cols-12">
-            <div className="media aspect-[4/3] lg:col-span-6">
-              <span className="media-label">
-                R&amp;D / LAB / PROTOTYPE
-              </span>
+            <div className="media relative aspect-[4/3] min-w-0 overflow-hidden lg:col-span-6">
+              <img
+                src="/media/home/research/home-research.png"
+                alt="Araştırma ve geliştirme çalışması"
+                className="absolute inset-0 z-[1] h-full w-full object-cover object-center"
+                onError={(event) => { event.currentTarget.style.display = "none"; }}
+              />
+              <span className="media-label">R&amp;D / LAB / PROTOTYPE</span>
             </div>
 
             <div className="flex flex-col justify-between lg:col-span-6 lg:pl-8">
@@ -409,10 +419,14 @@ export default function Home() {
                 </span>
               </h2>
 
-              <div className="media mt-12 aspect-[16/7]">
-                <span className="media-label">
-                  FACILITY / TEAM / CORPORATE
-                </span>
+              <div className="media relative mt-12 aspect-[16/7] min-w-0 overflow-hidden">
+                <img
+                  src="/media/home/corporate/home-corporate.png"
+                  alt="Kurumsal mühendislik ve teknoloji ortamı"
+                  className="absolute inset-0 z-[1] h-full w-full object-cover object-center"
+                  onError={(event) => { event.currentTarget.style.display = "none"; }}
+                />
+                <span className="media-label">FACILITY / TEAM / CORPORATE</span>
               </div>
 
               <Link
