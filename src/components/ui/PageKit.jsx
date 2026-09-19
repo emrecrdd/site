@@ -23,7 +23,6 @@ export const reveal = {
 };
 
 export function Hero({
-  index = "01",
   eyebrow,
   title,
   accent,
@@ -34,18 +33,15 @@ export function Hero({
     <section className="min-w-0 border-b rule pt-[84px]">
       <Container className="grid min-w-0 lg:min-h-[82svh] lg:grid-cols-12">
         {/* CONTENT */}
+
         <motion.div
           {...reveal}
           className="flex min-w-0 flex-col justify-between py-10 lg:col-span-7 lg:py-14 lg:pr-12"
         >
-          <div className="flex min-w-0 items-start justify-between gap-5">
-            <p className="eyebrow min-w-0 text-green">
+          <div>
+            <p className="eyebrow text-green">
               {eyebrow}
             </p>
-
-            <span className="shrink-0 text-[9px] font-bold tracking-[.18em] text-ink/25">
-              TAMİS / {index}
-            </span>
           </div>
 
           <div className="min-w-0 py-14 sm:py-16">
@@ -69,6 +65,7 @@ export function Hero({
         </motion.div>
 
         {/* MEDIA */}
+
         <motion.div
           {...reveal}
           className="media relative min-h-[420px] min-w-0 w-full max-w-full overflow-hidden md:min-h-[500px] lg:col-span-5 lg:min-h-0 lg:border-y-0 lg:border-r-0"
@@ -170,17 +167,13 @@ export function DarkBand({
 export function Cards({ items }) {
   return (
     <div className="grid min-w-0 md:grid-cols-2 xl:grid-cols-4">
-      {items.map((item, index) => (
+      {items.map((item) => (
         <div
           key={item.title}
           id={item.id}
           className="min-w-0 border-b border-r rule p-7 md:p-9"
         >
-          <span className="text-[9px] font-bold tracking-[.18em] text-green">
-            0{index + 1}
-          </span>
-
-          <h3 className="mt-10 break-words text-2xl font-medium tracking-[-.04em]">
+          <h3 className="break-words text-2xl font-medium tracking-[-.04em]">
             {item.title}
           </h3>
 
