@@ -76,29 +76,7 @@ export default function Corporate() {
 
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/0" />
 
-        <Container className="relative z-10">
-          <motion.div
-            {...reveal}
-            className="flex min-h-[636px] max-w-2xl flex-col justify-center py-16 lg:min-h-[676px]"
-          >
-            
-
-           
-
-            <p className="mt-10 max-w-xl text-base leading-8 text-ink/70 md:text-lg">
-              Ankara merkezli TAMİS, geçmiş kuşaklardan gelen
-              sanayi tecrübesini sürekli Ar-Ge çalışmaları ve
-              üretim kabiliyetleriyle ileri taşıyan bir aile
-              şirketidir.
-            </p>
-
-            <div className="mt-10 h-px w-8 bg-ink/60" />
-
-            <p className="micro-label mt-5">
-              TAMİS · ANKARA
-            </p>
-          </motion.div>
-        </Container>
+       
       </section>
 
       {/* HAKKIMIZDA */}
