@@ -82,9 +82,7 @@ export default function Corporate() {
             className="flex min-h-[636px] max-w-2xl flex-col justify-center py-16 lg:min-h-[676px]"
           >
             <div className="flex items-center gap-4">
-              <p className="eyebrow text-green">
-                Kurumsal
-              </p>
+             
 
               <span className="h-px w-10 bg-green/60" />
             </div>
