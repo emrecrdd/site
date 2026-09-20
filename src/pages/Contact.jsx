@@ -1,4 +1,4 @@
-```jsx
+
 import { Hero } from "../components/ui/PageKit";
 import Container from "../components/ui/Container";
 import { ArrowUpRight } from "lucide-react";
@@ -104,4 +104,4 @@ export default function Contact() {
     </main>
   );
 }
-```
+
