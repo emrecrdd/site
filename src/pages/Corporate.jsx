@@ -83,14 +83,7 @@ export default function Corporate() {
           >
             
 
-            <h1 className="mt-8 text-[clamp(4rem,8vw,7.8rem)] font-medium leading-[.82] tracking-[-.07em] text-ink">
-              1987'den
-              <br />
-
-              <span className="text-green">
-                bugüne
-              </span>
-            </h1>
+           
 
             <p className="mt-10 max-w-xl text-base leading-8 text-ink/70 md:text-lg">
               Ankara merkezli TAMİS, geçmiş kuşaklardan gelen
