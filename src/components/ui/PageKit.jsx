@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -31,14 +30,16 @@ export function Hero({
   media,
   mediaSrc,
   videoSrc,
-  mediaFit = "cover",
+  portrait = false,
 }) {
   return (
     <section className="border-b rule pt-[84px]">
       <Container className="grid min-w-0 lg:min-h-[78svh] lg:grid-cols-12">
         <motion.div
           {...reveal}
-          className="flex min-w-0 flex-col justify-between py-10 lg:col-span-6 lg:py-14 lg:pr-14"
+          className={`flex min-w-0 flex-col justify-between py-10 lg:py-14 lg:pr-14 ${
+            portrait ? "lg:col-span-7" : "lg:col-span-6"
+          }`}
         >
           <p className="eyebrow text-green">
             {eyebrow}
@@ -72,7 +73,9 @@ export function Hero({
 
         <motion.div
           {...reveal}
-          className="media relative min-h-[420px] min-w-0 w-full max-w-full overflow-hidden lg:col-span-6 lg:min-h-0 lg:border-y-0 lg:border-r-0"
+          className={`media relative min-h-[420px] min-w-0 w-full max-w-full overflow-hidden lg:min-h-0 lg:border-y-0 lg:border-r-0 ${
+            portrait ? "lg:col-span-5" : "lg:col-span-6"
+          }`}
         >
           {videoSrc && (
             <video
@@ -90,10 +93,10 @@ export function Hero({
             <img
               src={mediaSrc}
               alt=""
-              className={`absolute inset-0 h-full w-full ${
-                mediaFit === "contain"
-                  ? "object-contain object-center"
-                  : "object-cover object-center"
+              className={`absolute inset-0 h-full w-full object-cover ${
+                portrait
+                  ? "object-[center_38%]"
+                  : "object-center"
               }`}
             />
           )}
@@ -236,4 +239,3 @@ export function Cards({ items = [] }) {
     </div>
   );
 }
-

@@ -1,4 +1,3 @@
-
 import { Hero } from "../components/ui/PageKit";
 import Container from "../components/ui/Container";
 import { ArrowUpRight } from "lucide-react";
@@ -31,7 +30,7 @@ export default function Contact() {
         copy="Kurumsal iletişim ve genel bilgi talepleri için TAMİS Teknoloji ile iletişime geçebilirsiniz."
         media="TAMİS / ANKARA"
         mediaSrc="/media/real/iletisim.png"
-        mediaFit="contain"
+        portrait
       />
 
       <section className="bg-white py-20 md:py-28">
@@ -104,4 +103,3 @@ export default function Contact() {
     </main>
   );
 }
-
