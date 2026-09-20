@@ -70,44 +70,7 @@ export default function Corporate() {
       <section className="border-b rule bg-white pt-[84px]">
 
         {/* HERO METİN */}
-        <Container>
-          <motion.div
-            {...reveal}
-            className="grid gap-10 py-12 lg:grid-cols-12 lg:items-end lg:py-16"
-          >
-            <div className="lg:col-span-7">
-              <div className="flex items-center gap-4">
-                <p className="eyebrow text-green">
-                  Kurumsal
-                </p>
-
-                <span className="h-px w-10 bg-green/50" />
-              </div>
-
-              <h1 className="mt-8 text-[clamp(4rem,8vw,7.5rem)] font-medium leading-[.84] tracking-[-.07em]">
-                1987'den
-                <br />
-
-                <span className="text-green">
-                  bugüne
-                </span>
-              </h1>
-            </div>
-
-            <div className="lg:col-span-5 lg:pb-2">
-              <p className="copy border-t rule pt-7">
-                Ankara merkezli TAMİS, geçmiş kuşaklardan gelen
-                sanayi tecrübesini sürekli Ar-Ge çalışmaları ve
-                üretim kabiliyetleriyle ileri taşıyan bir aile
-                şirketidir.
-              </p>
-
-              <p className="micro-label mt-8">
-                TAMİS · ANKARA · 1987
-              </p>
-            </div>
-          </motion.div>
-        </Container>
+       
 
         {/* TAM GENİŞLİK FABRİKA FOTOĞRAFI */}
         <motion.div
