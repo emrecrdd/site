@@ -67,16 +67,69 @@ export default function Corporate() {
     <main className="overflow-hidden bg-white">
 
       {/* HERO */}
-      <section className="relative min-h-[720px] overflow-hidden border-b rule pt-[84px] lg:min-h-[760px]">
-        <img
-          src="/media/generated/kurumsal-09.jpg"
-          alt="TAMİS Teknoloji Ankara üretim tesisi"
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        />
+      <section className="border-b rule bg-white pt-[84px]">
 
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/0" />
+        {/* HERO METİN */}
+        <Container>
+          <motion.div
+            {...reveal}
+            className="grid gap-10 py-12 lg:grid-cols-12 lg:items-end lg:py-16"
+          >
+            <div className="lg:col-span-7">
+              <div className="flex items-center gap-4">
+                <p className="eyebrow text-green">
+                  Kurumsal
+                </p>
 
-       
+                <span className="h-px w-10 bg-green/50" />
+              </div>
+
+              <h1 className="mt-8 text-[clamp(4rem,8vw,7.5rem)] font-medium leading-[.84] tracking-[-.07em]">
+                1987'den
+                <br />
+
+                <span className="text-green">
+                  bugüne
+                </span>
+              </h1>
+            </div>
+
+            <div className="lg:col-span-5 lg:pb-2">
+              <p className="copy border-t rule pt-7">
+                Ankara merkezli TAMİS, geçmiş kuşaklardan gelen
+                sanayi tecrübesini sürekli Ar-Ge çalışmaları ve
+                üretim kabiliyetleriyle ileri taşıyan bir aile
+                şirketidir.
+              </p>
+
+              <p className="micro-label mt-8">
+                TAMİS · ANKARA · 1987
+              </p>
+            </div>
+          </motion.div>
+        </Container>
+
+        {/* TAM GENİŞLİK FABRİKA FOTOĞRAFI */}
+        <motion.div
+          {...reveal}
+          className="relative w-full overflow-hidden bg-ink"
+        >
+          <img
+            src="/media/generated/kurumsal-09.jpg"
+            alt="TAMİS Teknoloji Ankara üretim tesisi"
+            className="block h-auto w-full"
+          />
+
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
+
+          <div className="absolute bottom-5 left-0 right-0">
+            <Container>
+              <span className="micro-label !text-white">
+                TAMİS / ANKARA
+              </span>
+            </Container>
+          </div>
+        </motion.div>
       </section>
 
       {/* HAKKIMIZDA */}
