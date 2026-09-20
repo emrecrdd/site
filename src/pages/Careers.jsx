@@ -43,7 +43,7 @@ export default function Careers() {
         accent="üretmek"
         copy="TAMİS, çalışanlarının yetkinliğini ve motivasyonunu en değerli sermayesi olarak görür."
         media="TAMİS / KARİYER"
-        mediaSrc="/media/real/cnc-isleme.jpeg"
+        mediaSrc="/media/generated/kurumsal-07.jpg"
       />
 
       {/* KARİYER YAKLAŞIMI */}
@@ -96,7 +96,7 @@ export default function Careers() {
               className="media relative min-h-[420px] overflow-hidden lg:col-span-7 lg:min-h-[620px]"
             >
               <img
-                src="/media/real/universal-torna.jpeg"
+                src="/media/generated/kurumsal-06.jpg"
                 alt="TAMİS üretim sahası"
                 className="absolute inset-0 h-full w-full object-cover"
               />

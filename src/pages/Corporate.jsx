@@ -54,7 +54,7 @@ export default function Corporate() {
         accent="bugüne"
         copy="Ankara merkezli TAMİS, geçmiş kuşaklardan gelen sanayi tecrübesini sürekli Ar-Ge çalışmaları ve üretim kabiliyetleriyle ileri taşıyan bir aile şirketidir."
         media="TAMİS / ANKARA"
-        mediaSrc="/media/real/universal-torna.jpeg"
+        mediaSrc="/media/generated/kurumsal-09.jpg"
       />
 
       {/* HAKKIMIZDA */}

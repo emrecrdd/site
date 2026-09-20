@@ -55,8 +55,8 @@ export default function Capabilities() {
         title="Üretilebilir"
         accent="çözümler"
         copy="TAMİS, talaşlı imalat ile tasarım ve prototipleme kabiliyetlerini hassas üretim odağında bir araya getirir."
-        media="MANUFACTURING / CAPABILITIES"
-        mediaSrc="/media/real/cnc-isleme.jpeg"
+        media="ÜRETİM / YETKİNLİKLER"
+        mediaSrc="/media/generated/kurumsal-02.jpg"
       />
 
       {/* ÜRETİM YAKLAŞIMI */}

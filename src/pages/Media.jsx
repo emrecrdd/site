@@ -60,7 +60,7 @@ export default function Media() {
             className="media relative min-h-[500px] overflow-hidden md:min-h-[720px]"
           >
             <img
-              src="/media/real/cnc-isleme.jpeg"
+              src="/media/generated/kurumsal-10.jpg"
               alt="TAMİS üretim sahasında talaşlı imalat"
               className="absolute inset-0 h-full w-full object-cover"
             />
@@ -95,7 +95,7 @@ export default function Media() {
               className="media relative min-h-[430px] overflow-hidden md:col-span-7 md:min-h-[620px]"
             >
               <img
-                src="/media/real/universal-torna.jpeg"
+                src="/media/generated/kurumsal-01.jpg"
                 alt="TAMİS üretim sahasında üniversal tornalama"
                 className="absolute inset-0 h-full w-full object-cover"
               />
@@ -119,7 +119,7 @@ export default function Media() {
             >
               <div className="media relative min-h-0 flex-1 overflow-hidden">
                 <img
-                  src="/media/real/islenmis-parca.jpeg"
+                  src="/media/generated/kurumsal-03.jpg"
                   alt="TAMİS talaşlı imalat üretim detayı"
                   className="absolute inset-0 h-full w-full object-cover"
                 />

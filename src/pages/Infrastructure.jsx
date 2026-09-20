@@ -110,7 +110,7 @@ export default function Infrastructure() {
           <div className="grid gap-5 md:grid-cols-2">
             <div className="media relative min-h-[420px] overflow-hidden md:min-h-[560px]">
               <img
-                src="/media/real/universal-torna.jpeg"
+                src="/media/generated/kurumsal-08.jpg"
                 alt="TAMİS üretim sahasında üniversal tornalama"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
               />
@@ -124,7 +124,7 @@ export default function Infrastructure() {
 
             <div className="media relative min-h-[420px] overflow-hidden md:min-h-[560px]">
               <img
-                src="/media/real/islenmis-parca.jpeg"
+                src="/media/generated/kurumsal-12.jpg"
                 alt="TAMİS talaşlı imalat üretim detayı"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
               />

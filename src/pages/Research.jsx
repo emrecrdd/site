@@ -70,7 +70,7 @@ export default function Research() {
             className="media relative min-h-[480px] min-w-0 overflow-hidden lg:col-span-6 lg:min-h-0"
           >
             <img
-              src="/media/real/islenmis-parca.jpeg"
+              src="/media/generated/kurumsal-04.jpg"
               alt="TAMİS tarafından işlenmiş metal parça"
               className="absolute inset-0 h-full w-full object-cover"
             />
@@ -80,7 +80,7 @@ export default function Research() {
             <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between p-6 text-white md:p-8">
               <div>
                 <p className="text-[9px] font-bold uppercase tracking-[.2em] text-white/55">
-                  Engineering / R&amp;D
+                  Mühendislik / Ar-Ge
                 </p>
                 <p className="mt-2 text-lg font-medium">
                   Tasarım · Prototipleme · Üretim
@@ -185,7 +185,7 @@ export default function Research() {
               className="media relative min-h-[520px] overflow-hidden lg:col-span-7"
             >
               <img
-                src="/media/real/cnc-isleme.jpeg"
+                src="/media/generated/kurumsal-11.jpg"
                 alt="TAMİS CNC talaşlı imalat süreci"
                 className="absolute inset-0 h-full w-full object-cover"
               />
@@ -193,7 +193,7 @@ export default function Research() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
 
               <span className="media-label !text-white">
-                PROTOTYPING / MANUFACTURING
+                PROTOTİPLEME / ÜRETİM
               </span>
             </motion.div>
 
