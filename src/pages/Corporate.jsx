@@ -81,11 +81,7 @@ export default function Corporate() {
             {...reveal}
             className="flex min-h-[636px] max-w-2xl flex-col justify-center py-16 lg:min-h-[676px]"
           >
-            <div className="flex items-center gap-4">
-             
-
-              <span className="h-px w-10 bg-green/60" />
-            </div>
+            
 
             <h1 className="mt-8 text-[clamp(4rem,8vw,7.8rem)] font-medium leading-[.82] tracking-[-.07em] text-ink">
               1987'den
