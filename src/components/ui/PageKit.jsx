@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -30,6 +31,7 @@ export function Hero({
   media,
   mediaSrc,
   videoSrc,
+  mediaFit = "cover",
 }) {
   return (
     <section className="border-b rule pt-[84px]">
@@ -88,7 +90,11 @@ export function Hero({
             <img
               src={mediaSrc}
               alt=""
-              className="absolute inset-0 h-full w-full object-cover"
+              className={`absolute inset-0 h-full w-full ${
+                mediaFit === "contain"
+                  ? "object-contain"
+                  : "object-cover"
+              }`}
             />
           )}
 
@@ -230,3 +236,4 @@ export function Cards({ items = [] }) {
     </div>
   );
 }
+
