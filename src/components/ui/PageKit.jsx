@@ -86,17 +86,17 @@ export function Hero({
             />
           )}
 
-        {!videoSrc && mediaSrc && (
-  <img
-    src={mediaSrc}
-    alt=""
-    className={
-      mediaFit === "contain"
-        ? "relative block h-auto w-full object-contain"
-        : "absolute inset-0 h-full w-full object-cover"
-    }
-  />
-)}
+          {!videoSrc && mediaSrc && (
+            <img
+              src={mediaSrc}
+              alt=""
+              className={`absolute inset-0 h-full w-full ${
+                mediaFit === "contain"
+                  ? "object-contain object-center"
+                  : "object-cover object-center"
+              }`}
+            />
+          )}
 
           {(videoSrc || mediaSrc) && (
             <div className="media-shade" />
