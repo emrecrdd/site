@@ -31,7 +31,7 @@ export default function Footer() {
               Havacılık
               <br />
               <span className="text-white/38">
-                İleri Mühendislik
+                Mühendislik
               </span>
             </h2>
 
