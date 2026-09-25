@@ -26,8 +26,8 @@ const capabilities = [
 ];
 
 const capacities = [
-  ["1000 × 600", "CNC dik işleme"],
-  ["1000 mm × 10 inç", "CNC tornalama"],
+  ["1000 × 600 mm", "CNC dik işleme"],
+  ['Ø10″ × 1000 mm', "CNC tornalama"],
   ["4000 × 800 mm", "Tornalama & derin delme"],
   ["1500 × 350 mm", "Üniversal tornalama"],
   ["160 ton", "Hidrolik pres"],
@@ -74,7 +74,9 @@ export default function Home() {
               </h1>
 
               <p className="copy mt-9 border-t rule pt-7">
-               4140 ve 8620 kalite çelikler ile alüminyum esaslı çap malzemelerde, farklı çap gereksinimlerine yönelik derin karot delme işlemleri gerçekleştiriyoruz.
+                4140 ve 8620 kalite çelikler ile alüminyum esaslı çap
+                malzemelerde, farklı çap gereksinimlerine yönelik derin
+                karot delme işlemleri gerçekleştiriyoruz.
               </p>
 
               <div className="mt-10 flex items-center gap-3 micro-label">
@@ -100,11 +102,11 @@ export default function Home() {
                 <div className="media-shade" />
 
                 <span className="media-label !text-white">
-                  DERİN KAROT DELME 
+                  DERİN KAROT DELME
                 </span>
               </motion.div>
 
-              {/* ÜNİVERSAL TORNA / KAROT */}
+              {/* ÜNİVERSAL TORNA */}
               <motion.div
                 {...reveal}
                 className="media relative min-h-[420px] overflow-hidden md:min-h-[520px]"
@@ -130,6 +132,7 @@ export default function Home() {
       {/* HERO / ÜRETİM VİDEOSU */}
       <section>
         <Container className="grid min-h-[calc(100svh-84px)] min-w-0 lg:grid-cols-12">
+
           <motion.div
             {...reveal}
             className="flex min-w-0 flex-col justify-between py-9 lg:col-span-6 lg:pr-14"
@@ -195,12 +198,14 @@ export default function Home() {
               TAMİS / ÜRETİM
             </span>
           </motion.div>
+
         </Container>
       </section>
 
       {/* YETKİNLİKLER */}
       <section className="bg-white py-24 md:py-32">
         <Container>
+
           <motion.div
             {...reveal}
             className="grid gap-12 lg:grid-cols-12"
@@ -223,8 +228,7 @@ export default function Home() {
 
               <p className="copy mt-9 max-w-2xl border-t rule pt-7">
                 Tasarım kararından işlenmiş parçaya kadar,
-                üretilebilirlik odağını koruyan bütünleşik bir
-                yaklaşım.
+                üretilebilirlik odağını koruyan bütünleşik bir yaklaşım.
               </p>
             </div>
           </motion.div>
@@ -255,6 +259,7 @@ export default function Home() {
               </Link>
             ))}
           </div>
+
         </Container>
       </section>
 
@@ -262,6 +267,7 @@ export default function Home() {
       <section className="technical-grid bg-green py-24 text-white md:py-32">
         <Container>
           <div className="grid gap-14 lg:grid-cols-12">
+
             <div className="lg:col-span-4">
               <p className="micro-label !text-white/45">
                 Üretim Altyapısı
@@ -310,6 +316,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
+
           </div>
         </Container>
       </section>
@@ -375,6 +382,7 @@ export default function Home() {
       <section className="bg-white py-24 md:py-32">
         <Container>
           <div className="border-t rule pt-8">
+
             <div className="grid gap-14 lg:grid-cols-12">
 
               <div className="lg:col-span-7">
@@ -435,6 +443,7 @@ export default function Home() {
               </div>
 
             </div>
+
           </div>
         </Container>
       </section>
@@ -473,18 +482,39 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="media min-h-[500px] lg:col-span-7">
-              <img
-                src="/media/generated/kurumsal-09.jpg"
-                alt="TAMİS Teknoloji"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
+            {/* KURUMSAL FOTOĞRAF */}
+            <div className="relative overflow-hidden bg-ink lg:col-span-7">
 
-              <div className="media-shade" />
+              {/* MOBİL — FOTOĞRAFIN TAMAMI GÖRÜNÜR */}
+              <div className="relative lg:hidden">
+                <img
+                  src="/media/generated/kurumsal-09.jpg"
+                  alt="TAMİS Teknoloji"
+                  className="block h-auto w-full"
+                />
 
-              <span className="media-label !text-white">
-                TAMİS / 1987
-              </span>
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+
+                <span className="media-label !text-white">
+                  TAMİS / 1987
+                </span>
+              </div>
+
+              {/* MASAÜSTÜ */}
+              <div className="relative hidden min-h-[500px] lg:block">
+                <img
+                  src="/media/generated/kurumsal-09.jpg"
+                  alt="TAMİS Teknoloji"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+
+                <div className="media-shade" />
+
+                <span className="media-label !text-white">
+                  TAMİS / 1987
+                </span>
+              </div>
+
             </div>
 
           </div>
