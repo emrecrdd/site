@@ -74,8 +74,7 @@ export default function Home() {
               </h1>
 
               <p className="copy mt-9 border-t rule pt-7">
-                4140, 8620 çelik ve alüminyum çap malzemeler için
-                her çapta karot açabiliyoruz.
+               4140 ve 8620 kalite çelikler ile alüminyum esaslı çap malzemelerde, farklı çap gereksinimlerine yönelik derin karot delme işlemleri gerçekleştiriyoruz.
               </p>
 
               <div className="mt-10 flex items-center gap-3 micro-label">
