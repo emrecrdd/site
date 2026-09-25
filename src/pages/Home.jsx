@@ -46,8 +46,90 @@ const materials = [
 export default function Home() {
   return (
     <main className="overflow-hidden">
-      {/* HERO */}
-      <section className="pt-[84px]">
+
+      {/* DERİN KAROT DELME */}
+      <section className="border-b rule bg-white pt-[84px]">
+        <Container>
+          <motion.div
+            {...reveal}
+            className="grid gap-10 py-14 lg:grid-cols-12 lg:items-center lg:py-20"
+          >
+            {/* METİN */}
+            <div className="lg:col-span-4 lg:pr-8">
+              <div className="flex items-center gap-4">
+                <p className="eyebrow text-green">
+                  Üretim Kabiliyeti
+                </p>
+
+                <span className="h-px w-10 bg-green/40" />
+              </div>
+
+              <h1 className="mt-8 text-[clamp(3.4rem,5vw,6rem)] font-medium leading-[.88] tracking-[-.065em]">
+                Derin karot
+                <br />
+
+                <span className="text-green">
+                  delme işlemi
+                </span>
+              </h1>
+
+              <p className="copy mt-9 border-t rule pt-7">
+                4140, 8620 çelik ve alüminyum çap malzemeler için
+                her çapta karot açabiliyoruz.
+              </p>
+
+              <div className="mt-10 flex items-center gap-3 micro-label">
+                <ArrowDown size={12} />
+                Üretim kabiliyetlerini keşfet
+              </div>
+            </div>
+
+            {/* FOTOĞRAFLAR */}
+            <div className="grid gap-3 sm:grid-cols-2 lg:col-span-8">
+
+              {/* İŞLENMİŞ PARÇA */}
+              <motion.div
+                {...reveal}
+                className="media relative min-h-[420px] overflow-hidden md:min-h-[520px]"
+              >
+                <img
+                  src="/media/real/islenmis-parca.jpeg"
+                  alt="TAMİS işlenmiş parça"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+
+                <div className="media-shade" />
+
+                <span className="media-label !text-white">
+                  İŞLENMİŞ PARÇA
+                </span>
+              </motion.div>
+
+              {/* ÜNİVERSAL TORNA / KAROT */}
+              <motion.div
+                {...reveal}
+                className="media relative min-h-[420px] overflow-hidden md:min-h-[520px]"
+              >
+                <img
+                  src="/media/real/universal-torna.jpeg"
+                  alt="TAMİS derin karot delme ve üniversal tornalama"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+
+                <div className="media-shade" />
+
+                <span className="media-label !text-white">
+                  DERİN KAROT DELME
+                </span>
+              </motion.div>
+
+            </div>
+          </motion.div>
+        </Container>
+      </section>
+
+      {/* HERO / ÜRETİM VİDEOSU */}
+      <section>
         <Container className="grid min-h-[calc(100svh-84px)] min-w-0 lg:grid-cols-12">
           <motion.div
             {...reveal}
@@ -64,13 +146,14 @@ export default function Home() {
             </div>
 
             <div className="py-14 lg:py-16">
-              <h1 className="max-w-[760px] text-[clamp(3.35rem,6.25vw,7.35rem)] font-medium leading-[.84] tracking-[-.072em]">
+              <h2 className="max-w-[760px] text-[clamp(3.35rem,6.25vw,7.35rem)] font-medium leading-[.84] tracking-[-.072em]">
                 Hassas üretim
                 <br />
+
                 <span className="text-green">
                   İleri mühendislik
                 </span>
-              </h1>
+              </h2>
 
               <p className="copy mt-9 max-w-xl border-t rule pt-7">
                 CNC talaşlı imalat, tasarım ve prototipleme
@@ -124,13 +207,16 @@ export default function Home() {
             className="grid gap-12 lg:grid-cols-12"
           >
             <div className="lg:col-span-3">
-              <p className="eyebrow">Yetkinlikler</p>
+              <p className="eyebrow">
+                Yetkinlikler
+              </p>
             </div>
 
             <div className="lg:col-span-9">
               <h2 className="title">
                 Mühendislik
                 <br />
+
                 <span className="text-green">
                   üretimle tamamlanır
                 </span>
@@ -185,6 +271,7 @@ export default function Home() {
               <h2 className="mt-8 text-5xl font-medium leading-[.9] tracking-[-.055em] md:text-6xl">
                 Rakamlarla
                 <br />
+
                 <span className="text-white/40">
                   üretim gücü
                 </span>
@@ -232,6 +319,7 @@ export default function Home() {
       <section className="bg-paper py-24 md:py-32">
         <Container>
           <div className="grid gap-12 lg:grid-cols-12 lg:items-stretch">
+
             <div className="media min-h-[520px] lg:col-span-7">
               <img
                 src="/media/real/cnc-isleme.jpeg"
@@ -255,6 +343,7 @@ export default function Home() {
                 <h2 className="mt-8 text-5xl font-medium leading-[.92] tracking-[-.055em] md:text-6xl">
                   Zorlu malzemeler
                   <br />
+
                   <span className="text-green">
                     Hassas sonuçlar
                   </span>
@@ -278,6 +367,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
+
           </div>
         </Container>
       </section>
@@ -287,6 +377,7 @@ export default function Home() {
         <Container>
           <div className="border-t rule pt-8">
             <div className="grid gap-14 lg:grid-cols-12">
+
               <div className="lg:col-span-7">
                 <p className="eyebrow text-green">
                   Kalite Kontrol
@@ -295,6 +386,7 @@ export default function Home() {
                 <h2 className="mt-8 max-w-4xl text-5xl font-medium leading-[.9] tracking-[-.06em] md:text-7xl">
                   Hassas üretim
                   <br />
+
                   <span className="text-green">
                     hassas ölçümle tamamlanır
                   </span>
@@ -308,9 +400,11 @@ export default function Home() {
                   yer alır.
                 </p>
               </div>
+
             </div>
 
             <div className="mt-16 grid border-y rule md:grid-cols-2">
+
               <div className="py-9 md:border-r md:pr-12">
                 <p className="micro-label text-green">
                   CMM Ölçüm
@@ -340,6 +434,7 @@ export default function Home() {
                   hassasiyetli ölçüm ekipmanları.
                 </p>
               </div>
+
             </div>
           </div>
         </Container>
@@ -349,12 +444,16 @@ export default function Home() {
       <section className="border-t rule py-24 md:py-32">
         <Container>
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+
             <div className="lg:col-span-5">
-              <p className="eyebrow">Kurumsal</p>
+              <p className="eyebrow">
+                Kurumsal
+              </p>
 
               <h2 className="mt-8 title">
                 1987'den
                 <br />
+
                 <span className="text-green">
                   bugüne
                 </span>
@@ -377,8 +476,8 @@ export default function Home() {
 
             <div className="media min-h-[500px] lg:col-span-7">
               <img
-                src="/media/real/universal-torna.jpeg"
-                alt="TAMİS üniversal tornalama altyapısı"
+                src="/media/generated/kurumsal-09.jpg"
+                alt="TAMİS Teknoloji"
                 className="absolute inset-0 h-full w-full object-cover"
               />
 
@@ -388,9 +487,11 @@ export default function Home() {
                 TAMİS / 1987
               </span>
             </div>
+
           </div>
         </Container>
       </section>
+
     </main>
   );
 }
