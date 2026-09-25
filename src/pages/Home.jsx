@@ -101,7 +101,7 @@ export default function Home() {
                 <div className="media-shade" />
 
                 <span className="media-label !text-white">
-                  İŞLENMİŞ PARÇA
+                  DERİN KAROT DELME 
                 </span>
               </motion.div>
 
@@ -119,7 +119,7 @@ export default function Home() {
                 <div className="media-shade" />
 
                 <span className="media-label !text-white">
-                  DERİN KAROT DELME
+                  İŞLENMİŞ PARÇA
                 </span>
               </motion.div>
 
